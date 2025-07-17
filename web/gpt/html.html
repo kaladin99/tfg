@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guia interactiva d’elements HTML accessibles</title>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body>
+    <div class="element header">
+        <header>
+            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <div class="tooltip">
+                &lt;header&gt;
+                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+                &lt;/header&gt;
+                <button class="copy-btn">Copia codi</button>
+            </div>
+        </header>
+
+    </div>
+
+    <div class="element sidebar">
+        <h2>Menú de navegació</h2>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="#inici">Inici</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+        <!-- <div class="tooltip">
+            &lt;h2&gt;Menú de navegació&lt;/h2&gt;<br>
+            &lt;nav aria-label="Menú principal"&gt;<br>
+            &lt;ul&gt;<br>
+            &lt;li&gt;&lt;a href="#inici"&gt;Inici&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="#contacte"&gt;Contacte&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;/ul&gt;<br>
+            &lt;/nav&gt;<br>
+            <button class="copy-btn">Copia codi</button>
+        </div> -->
+
+    </div>
+    <!-- Botó -->
+    <div class="element">
+        <h2>Botó</h2>
+        <button type="button" aria-label="Botó">
+            <span aria-hidden="true">📨</span>
+        </button>
+        <div class="tooltip">
+            &lt;button type="button" aria-label="Envia el formulari"&gt;
+            &lt;span aria-hidden="true"&gt;📨&lt;/span&gt;
+            &lt;/button&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+    <!-- Imatge -->
+    <div class="element">
+        <h2>Imatge amb text alternatiu</h2>
+        <img src="logo.png" alt="Logotip de l’empresa">
+        <div class="tooltip">
+            &lt;img src="logo.png" alt="Logotip de l’empresa"&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+    <!-- Select -->
+    <div class="element">
+        <h2>Select</h2>
+        <!-- Select amb opció de marcador de posició i etiqueta associada -->
+        <label for="select1">Seleccioneu una opció:</label>
+        <select id="select1">
+            <option value="" disabled selected>Selecciona una opció</option>
+            <option value="1">Opció 1</option>
+            <option value="2">Opció 2</option>
+            <option value="3">Opció 3</option>
+        </select>
+        <div class="tooltip">
+            &lt;label for="select1"&gt;Seleccioneu una opció:&lt;/label&gt;
+            &lt;select id="select1"&gt;
+            &lt;option value="" disabled selected&gt;Selecciona una opció&lt;/option&gt;
+            &lt;option value="1"&gt;Opció 1&lt;/option&gt;
+            &lt;option value="2"&gt;Opció 2&lt;/option&gt;
+            &lt;option value="3"&gt;Opció 3&lt;/option&gt;
+            &lt;/select&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+
+    </div>
+    <!-- Detalls -->
+    <div class="element">
+        <h2>Detalls</h2>
+        <!-- Element <details> per a contingut desplegable -->
+        <details>
+            <summary>Més detalls</summary>
+            <!-- El text de <summary> actua com a botó per mostrar/ocultar el contingut -->
+            <p>Informació desplegable.</p>
+
+        </details>
+        <div class="tooltip">
+            &lt;details&gt;
+            &lt;summary&gt;Més detalls&lt;/summary&gt;
+            &lt;!-- El text de &lt;summary&gt; actua com a botó per mostrar/ocultar el contingut --&gt;
+            &lt;p&gt;Aquí hi ha informació detallada que es pot amagar o mostrar.&lt;/p&gt;
+            &lt;/details&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+    <!-- Formulari -->
+    <div class="element">
+        <h2>Formulari accessible</h2>
+        <details>
+            <summary>Desplega el formulari</summary>
+            <form action="#" method="post" aria-labelledby="form-title" class="formulari">
+                <h2 id="form-title">Formulari d'exemple complet</h2>
+
+                <div class="camp-formulari">
+                    <label for="nom">Nom:</label><br>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="cognom">Cognom:</label><br>
+                    <input type="text" id="cognom" name="cognom" required>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="email">Correu electrònic:</label><br>
+                    <input type="email" id="email" name="email" required aria-describedby="email-help">
+                    <br><small id="email-help">No compartirem el teu correu amb ningú.</small>
+                </div>
+
+                <fieldset class="camp-formulari">
+                    <legend>Preferències de contacte:</legend>
+                    <div>
+                        <input type="radio" id="email-contacte" name="contacte" value="email">
+                        <label for="email-contacte">Per correu electrònic</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="telefon-contacte" name="contacte" value="telefon">
+                        <label for="telefon-contacte">Per telèfon</label>
+                    </div>
+                </fieldset>
+
+                <div class="camp-formulari">
+                    <input type="checkbox" id="condicions" name="condicions" required>
+                    <label for="condicions">Accepte les condicions d'ús</label>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="pais">Selecciona el teu país:</label><br>
+                    <select id="pais" name="pais" required>
+                        <option value="">-- Escull un país --</option>
+                        <option value="espanya">Espanya</option>
+                        <option value="frança">França</option>
+                        <option value="alemanya">Alemanya</option>
+                    </select>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="missatge">Comentaris o missatge:</label><br>
+                    <textarea id="missatge" name="missatge" rows="4" cols="40"></textarea>
+                </div>
+
+                <div class="camp-formulari">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Reiniciar</button>
+                </div>
+            </form>
+        </details>
+        <div class="tooltip">
+            &lt;form action="#" method="post" aria-labelledby="form-title" class="formulari"&gt;<br>
+            &lt;h2 id="form-title"&gt;Formulari d'exemple complet&lt;/h2&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;input type="text" id="nom" name="nom" required&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;input type="text" id="cognom" name="cognom" required&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;input type="email" id="email" name="email" required aria-describedby="email-help"&gt;<br>
+            &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;fieldset class="camp-formulari"&gt;<br>
+            &lt;legend&gt;Preferències de contacte:&lt;/legend&gt;<br>
+            &lt;div&gt;<br>
+            &lt;input type="radio" id="email-contacte" name="contacte" value="email"&gt;<br>
+            &lt;label for="email-contacte"&gt;Per correu electrònic&lt;/label&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div&gt;<br>
+            &lt;input type="radio" id="telefon-contacte" name="contacte" value="telefon"&gt;<br>
+            &lt;label for="telefon-contacte"&gt;Per telèfon&lt;/label&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;/fieldset&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;input type="checkbox" id="condicions" name="condicions" required&gt;<br>
+            &lt;label for="condicions"&gt;Accepte les condicions d'ús&lt;/label&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="pais"&gt;Selecciona el teu país:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;select id="pais" name="pais" required&gt;<br>
+            &lt;option value=""&gt;-- Escull un país --&lt;/option&gt;<br>
+            &lt;option value="espanya"&gt;Espanya&lt;/option&gt;<br>
+            &lt;option value="frança"&gt;França&lt;/option&gt;<br>
+            &lt;option value="alemanya"&gt;Alemanya&lt;/option&gt;<br>
+            &lt;/select&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="missatge"&gt;Comentaris o missatge:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;textarea id="missatge" name="missatge" rows="4" cols="40"&gt;&lt;/textarea&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;button type="submit"&gt;Enviar&lt;/button&gt;<br>
+            &lt;button type="reset"&gt;Reiniciar&lt;/button&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;/form&gt;<br>
+            <button class="copy-btn">Copia codi</button>
+        </div>
+
+    </div>
+    <!-- Dialeg -->
+    <div class="element">
+        <h2>Diàleg</h2>
+        <!-- Diàleg modal natiu amb títol accessible i botons per obrir/tancar -->
+        <button type="button" onclick="document.getElementById('dialog1').showModal()">Obre el diàleg</button>
+
+        <dialog id="dialog1" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">Títol del diàleg</h2>
+            <p>Contingut del diàleg.</p>
+            <button type="button" onclick="this.closest('dialog').close()">Tanca</button>
+            <!-- 'aria-labelledby' associa el títol al diàleg per a l'accessibilitat -->
+            <!-- showModal() obre el diàleg de manera modal; el botó interior el tanca -->
+        </dialog>
+        <div class="tooltip">
+            &lt;!-- Diàleg modal natiu amb títol accessible i botons per obrir/tancar --&gt;
+            &lt;button type="button" onclick="document.getElementById('dialog1').showModal()"&gt;Obre el
+            diàleg&lt;/button&gt;
+
+            &lt;dialog id="dialog1" aria-labelledby="dialogTitle"&gt;
+            &lt;h2 id="dialogTitle"&gt;Títol del diàleg&lt;/h2&gt;
+            &lt;p&gt;Contingut del diàleg.&lt;/p&gt;
+            &lt;button type="button" onclick="this.closest('dialog').close()"&gt;Tanca&lt;/button&gt;
+            &lt;!-- 'aria-labelledby' associa el títol al diàleg per a l'accessibilitat --&gt;
+            &lt;!-- showModal() obre el diàleg de manera modal; el botó interior el tanca --&gt;
+            &lt;/dialog&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+    <!-- Control lliscant -->
+    <div class="element">
+        <h2>Control lliscant</h2>
+        <!-- Control lliscant (slider) amb etiqueta -->
+        <label for="range1">Volum:</label>
+        <input type="range" id="range1" name="volum" min="0" max="100" value="50">
+        <!-- Min, max i value defineixen el rang i el valor inicial -->
+        <!-- Els lectors de pantalla anuncien automàticament aquest input com a slider amb el seu valor -->
+        <div class="tooltip">
+            &lt;!-- Control lliscant (slider) amb etiqueta --&gt;
+            &lt;label for="range1"&gt;Volum:&lt;/label&gt;
+            &lt;input type="range" id="range1" name="volum" min="0" max="100" value="50"&gt;
+            &lt;!-- Min, max i value defineixen el rang i el valor inicial --&gt;
+            &lt;!-- Els lectors de pantalla anuncien automàticament aquest input com a slider amb el seu valor --&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+    <!-- Barra de progrés -->
+    <div class="element">
+        <h2>Barra de progrés</h2>
+        <!-- Barra de progrés amb etiqueta descriptiva -->
+        <label for="progress1">Progrés de la tasca:</label>
+        <progress id="progress1" value="70" max="100">70%</progress>
+        <!-- L'etiqueta proporciona un nom accessible per a la barra de progrés -->
+        <!-- Sense l'atribut value, la barra indicaria un procés indeterminat -->
+        <!-- Footer -->
+        <div class="tooltip">
+            &lt;!-- Barra de progrés amb etiqueta descriptiva --&gt;
+            &lt;label for="progress1"&gt;Progrés de la tasca:&lt;/label&gt;
+            &lt;progress id="progress1" value="70" max="100"&gt;70%&lt;/progress&gt;
+            &lt;!-- L'etiqueta proporciona un nom accessible per a la barra de progrés --&gt;
+            &lt;!-- Sense l'atribut value, la barra indicaria un procés indeterminat --&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+
+    </div>
+    <!-- Indicador -->
+    <div class="element">
+        <h2>Indicador</h2>
+        <!-- Indicador (meter) amb etiqueta i atributs de rang -->
+        <label for="meter1">Satisfacció dels usuaris:</label>
+        <meter id="meter1" min="0" max="10" low="3" high="7" optimum="8" value="7">
+            7 de 10
+        </meter>
+        <!-- <meter> representa un valor 7 de 10; low, high, optimum defineixen els intervals de valor subjectius -->
+        <!-- L'etiqueta associada descriu què mesura el valor -->
+
+        <div class="tooltip">
+            &lt;!-- Indicador (meter) amb etiqueta i atributs de rang --&gt;
+            &lt;label for="meter1"&gt;Satisfacció dels usuaris:&lt;/label&gt;
+            &lt;meter id="meter1" min="0" max="10" low="3" high="7" optimum="8" value="7"&gt;
+            7 de 10
+            &lt;/meter&gt;
+            &lt;!-- &lt;meter&gt; representa un valor 7 de 10; low, high, optimum defineixen els intervals de valor
+            subjectius --&gt;
+            &lt;!-- L'etiqueta associada descriu què mesura el valor --&gt;
+        </div>
+    </div>
+    <!--Taula  -->
+    <div class="element">
+        <h2>Taula accessible</h2>
+        <table>
+            <caption>Resultats de l'enquesta </caption>
+            <!-- Descripció per a usuaris de tecnologies assistives -->
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th> <!-- Capçalera de columna -->
+                    <th scope="col">Valoració</th>
+                    <th scope="col">Comentaris</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Anna</th> <!-- Capçalera de fila -->
+                    <td>8</td>
+                    <td>Bon servei</td>
+                </tr>
+                <tr>
+                    <th scope="row">Joan</th>
+                    <td>9</td>
+                    <td>Molt professional</td>
+                </tr>
+                <tr>
+                    <th scope="row">Marc</th>
+                    <td>7</td>
+                    <td>Podria millorar</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tooltip">
+            &lt;table&gt;<br>
+            &lt;caption&gt;Resultats de l'enquesta de satisfacció&lt;/caption&gt;<br>
+            &lt;thead&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="col"&gt;Nom&lt;/th&gt;<br>
+            &lt;th scope="col"&gt;Valoració&lt;/th&gt;<br>
+            &lt;th scope="col"&gt;Comentaris&lt;/th&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;/thead&gt;<br>
+            &lt;tbody&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="row"&gt;Anna&lt;/th&gt;<br>
+            &lt;td&gt;8&lt;/td&gt;<br>
+            &lt;td&gt;Bon servei&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="row"&gt;Joan&lt;/th&gt;<br>
+            &lt;td&gt;9&lt;/td&gt;<br>
+            &lt;td&gt;Molt professional&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="row"&gt;Marc&lt;/th&gt;<br>
+            &lt;td&gt;7&lt;/td&gt;<br>
+            &lt;td&gt;Podria millorar&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;/tbody&gt;<br>
+            &lt;/table&gt;<br>
+            <button class="copy-btn">Copia codi</button>
+
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+    <div class="element footer">
+        <h2> Footer</h2>
+
+        <footer>
+            <p>© 2025 Nom de la teua empresa</p>
+        </footer>
+        <div class="tooltip">
+            &lt;header&gt;
+            &lt;h1&gt;Benvingut&lt;/h1&gt;
+            &lt;/header&gt;
+            &lt;footer&gt;
+            &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
+            &lt;/footer&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>

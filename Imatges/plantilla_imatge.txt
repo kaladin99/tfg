@@ -1,0 +1,10 @@
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{TFG/img/CC}
+        \caption{CC}
+        \label{fig:CC}
+    \end{figure}
+    
+Referenciar una imatge
+ 
+\ref{fig:CC}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TÍTOL DE LA PÀGINA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="element header">
+        <header>
+            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <div class="tooltip">
+                &lt;header&gt;
+                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+                &lt;/header&gt;
+                <button class="copy-btn">Copia codi</button>
+            </div>
+        </header>
+
+    </div>
+    <div class="element sidebar">
+        <h2>Menú de navegació</h2>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="estructura.html">Estructures bàsiques</a></li>
+                <li><a href="formularis.html">Formularis</a></li>
+                <li><a href="taules.html">Taules</a></li>
+                <li><a href="navegacio.html">Navegació</a></li>
+                <li><a href="multimedia.html">Multimèdia</a></li>
+                <li><a href="interactius.html">Elements interactius</a></li>
+                <li><a href="aria.html">WAI-ARIA</a></li>
+            </ul>
+        </nav>
+    </div>
+
+   
+     <!--Taula  -->
+    <div class="element">
+        <h2>Taula accessible</h2>
+        <table>
+            <caption>Resultats de l'enquesta </caption>
+            <!-- Descripció per a usuaris de tecnologies assistives -->
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th> <!-- Capçalera de columna -->
+                    <th scope="col">Valoració</th>
+                    <th scope="col">Comentaris</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Anna</th> <!-- Capçalera de fila -->
+                    <td>8</td>
+                    <td>Bon servei</td>
+                </tr>
+                <tr>
+                    <th scope="row">Joan</th>
+                    <td>9</td>
+                    <td>Molt professional</td>
+                </tr>
+                <tr>
+                    <th scope="row">Marc</th>
+                    <td>7</td>
+                    <td>Podria millorar</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tooltip">
+            &lt;table&gt;<br>
+            &lt;caption&gt;Resultats de l'enquesta de satisfacció&lt;/caption&gt;<br>
+            &lt;thead&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="col"&gt;Nom&lt;/th&gt;<br>
+            &lt;th scope="col"&gt;Valoració&lt;/th&gt;<br>
+            &lt;th scope="col"&gt;Comentaris&lt;/th&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;/thead&gt;<br>
+            &lt;tbody&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="row"&gt;Anna&lt;/th&gt;<br>
+            &lt;td&gt;8&lt;/td&gt;<br>
+            &lt;td&gt;Bon servei&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="row"&gt;Joan&lt;/th&gt;<br>
+            &lt;td&gt;9&lt;/td&gt;<br>
+            &lt;td&gt;Molt professional&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;tr&gt;<br>
+            &lt;th scope="row"&gt;Marc&lt;/th&gt;<br>
+            &lt;td&gt;7&lt;/td&gt;<br>
+            &lt;td&gt;Podria millorar&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;/tbody&gt;<br>
+            &lt;/table&gt;<br>
+            <button class="copy-btn">Copia codi</button>
+
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+    <!-- caption -->
+    <!-- thead -->
+    <!-- tbody -->
+    <!-- tfoot -->
+    <!-- tr -->
+    <!-- td -->
+    <!-- scope -->
+    <!-- headers -->
+ <div class="element footer">
+        <h2> Footer</h2>
+
+        <footer>
+            <p>© 2025 Nom de la teua empresa</p>
+        </footer>
+        <div class="tooltip">
+            &lt;header&gt;
+            &lt;h1&gt;Benvingut&lt;/h1&gt;
+            &lt;/header&gt;
+            &lt;footer&gt;
+            &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
+            &lt;/footer&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

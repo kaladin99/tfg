@@ -1,30 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guia interactiva d’elements HTML accessibles</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-    <nav aria-label="Menu principal">
-        <ul class="menu">
-            <li class="menu-item">
-                <a href="inici">Inici</a>
-                <div class="tooltip">Torna a l'inici de la pàgina</div>
-            </li>
-            <li class="menu-item">
-                <a href="projecte">Projecte</a>
-                <div class="tooltip">Informació sobre el TFG</div>
-            </li>
-            <li class="menu-item">
-                <a href="contacte">Contacte</a>
-                <div class="tooltip">Dades de contacte</div>
-            </li>
-        </ul>
-    </nav>
+    <div class="element header">
+        <header>
+            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <div class="tooltip">
+                &lt;header&gt;
+                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+                &lt;/header&gt;
+                <button class="copy-btn">Copia codi</button>
+            </div>
+        </header>
+
+    </div>
+
+    <div class="element sidebar">
+        <h2>Menú de navegació</h2>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="estructura.html">Estructures bàsiques</a></li>
+                <li><a href="formularis.html">Formularis</a></li>
+                <li><a href="taules.html">Taules</a></li>
+                <li><a href="navegacio.html">Navegació</a></li>
+                <li><a href="multimedia.html">Multimèdia</a></li>
+                <li><a href="interactius.html">Elements interactius</a></li>
+                <li><a href="aria.html">WAI-ARIA</a></li>
+            </ul>
+        </nav>
+        <!-- <div class="tooltip">
+            &lt;h2&gt;Menú de navegació&lt;/h2&gt;<br>
+            &lt;nav aria-label="Menú principal"&gt;<br>
+            &lt;ul&gt;<br>
+            &lt;li&gt;&lt;a href="#inici"&gt;Inici&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="#contacte"&gt;Contacte&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;/ul&gt;<br>
+            &lt;/nav&gt;<br>
+            <button class="copy-btn">Copia codi</button>
+        </div> -->
+
+    </div>
+ 
+    <section class="presentacio element">
+  <h1>Benvinguts a la guia interactiva d’accessibilitat web</h1>
+
+  <p>
+    Aquesta aplicació web està pensada com una eina d’ajuda per a desenvolupadors i desenvolupadores que volen fer les seues aplicacions web més accessibles per a persones amb discapacitat visual.
+  </p>
+
+  <p>
+    Sovint, aplicar criteris d’accessibilitat pot resultar un procés llarg i complex. Aquesta guia pretén simplificar aquesta tasca, oferint exemples pràctics i interactius de tots els elements HTML, explicant com adaptar-los perquè siguen accessibles.
+  </p>
+
+  <p>
+    En navegar per les diferents seccions de la web, trobaràs elements com formularis, menús, taules, botons i molts altres, cadascun d’ells mostrat amb el seu codi corresponent ja preparat per ser accessible. Passant el ratolí per damunt de cada exemple, apareixerà un recuadre (tooltip) amb el codi HTML que pots copiar i adaptar al teu projecte.
+  </p>
+
+  <p>
+    Aquesta guia no automatitza l’accessibilitat, sinó que et dona les eines i coneixements necessaris per a implementar-la correctament, entenent què cal fer i per què.
+  </p>
+
+  <p><strong>Recorda:</strong> una web accessible no sols ajuda a les persones amb discapacitat visual, sinó que millora l’experiència d’usuari per a tothom.</p>
+</section>
+
+    
+
+    <div class="element footer">
+        <h2> Footer</h2>
+
+        <footer>
+            <p>© 2025 Nom de la teua empresa</p>
+        </footer>
+        <div class="tooltip">
+            &lt;header&gt;
+            &lt;h1&gt;Benvingut&lt;/h1&gt;
+            &lt;/header&gt;
+            &lt;footer&gt;
+            &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
+            &lt;/footer&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

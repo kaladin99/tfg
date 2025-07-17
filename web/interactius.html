@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TÍTOL DE LA PÀGINA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="element header">
+        <header>
+            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <div class="tooltip">
+                &lt;header&gt;
+                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+                &lt;/header&gt;
+                <button class="copy-btn">Copia codi</button>
+            </div>
+        </header>
+
+    </div>
+    <div class="element sidebar">
+        <h2>Menú de navegació</h2>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="estructura.html">Estructures bàsiques</a></li>
+                <li><a href="formularis.html">Formularis</a></li>
+                <li><a href="taules.html">Taules</a></li>
+                <li><a href="navegacio.html">Navegació</a></li>
+                <li><a href="multimedia.html">Multimèdia</a></li>
+                <li><a href="interactius.html">Elements interactius</a></li>
+                <li><a href="aria.html">WAI-ARIA</a></li>
+            </ul>
+        </nav>
+    </div>
+
+  <!-- Detalls -->
+    <div class="element">
+        <h2>Detalls</h2>
+        <!-- Element <details> per a contingut desplegable -->
+        <details>
+            <summary>Més detalls</summary>
+            <!-- El text de <summary> actua com a botó per mostrar/ocultar el contingut -->
+            <p>Informació desplegable.</p>
+
+        </details>
+        <div class="tooltip">
+            &lt;details&gt;
+            &lt;summary&gt;Més detalls&lt;/summary&gt;
+            &lt;!-- El text de &lt;summary&gt; actua com a botó per mostrar/ocultar el contingut --&gt;
+            &lt;p&gt;Aquí hi ha informació detallada que es pot amagar o mostrar.&lt;/p&gt;
+            &lt;/details&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+<!-- summary -->
+<!-- dialog -->
+ <div class="element">
+        <h2>Diàleg</h2>
+        <!-- Diàleg modal natiu amb títol accessible i botons per obrir/tancar -->
+        <button type="button" onclick="document.getElementById('dialog1').showModal()">Obre el diàleg</button>
+
+        <dialog id="dialog1" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">Títol del diàleg</h2>
+            <p>Contingut del diàleg.</p>
+            <button type="button" onclick="this.closest('dialog').close()">Tanca</button>
+            <!-- 'aria-labelledby' associa el títol al diàleg per a l'accessibilitat -->
+            <!-- showModal() obre el diàleg de manera modal; el botó interior el tanca -->
+        </dialog>
+        <div class="tooltip">
+            &lt;!-- Diàleg modal natiu amb títol accessible i botons per obrir/tancar --&gt;
+            &lt;button type="button" onclick="document.getElementById('dialog1').showModal()"&gt;Obre el
+            diàleg&lt;/button&gt;
+
+            &lt;dialog id="dialog1" aria-labelledby="dialogTitle"&gt;
+            &lt;h2 id="dialogTitle"&gt;Títol del diàleg&lt;/h2&gt;
+            &lt;p&gt;Contingut del diàleg.&lt;/p&gt;
+            &lt;button type="button" onclick="this.closest('dialog').close()"&gt;Tanca&lt;/button&gt;
+            &lt;!-- 'aria-labelledby' associa el títol al diàleg per a l'accessibilitat --&gt;
+            &lt;!-- showModal() obre el diàleg de manera modal; el botó interior el tanca --&gt;
+            &lt;/dialog&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+<!-- progress -->
+   <!-- Control lliscant -->
+    <div class="element">
+        <h2>Control lliscant</h2>
+        <!-- Control lliscant (slider) amb etiqueta -->
+        <label for="range1">Volum:</label>
+        <input type="range" id="range1" name="volum" min="0" max="100" value="50">
+        <!-- Min, max i value defineixen el rang i el valor inicial -->
+        <!-- Els lectors de pantalla anuncien automàticament aquest input com a slider amb el seu valor -->
+        <div class="tooltip">
+            &lt;!-- Control lliscant (slider) amb etiqueta --&gt;
+            &lt;label for="range1"&gt;Volum:&lt;/label&gt;
+            &lt;input type="range" id="range1" name="volum" min="0" max="100" value="50"&gt;
+            &lt;!-- Min, max i value defineixen el rang i el valor inicial --&gt;
+            &lt;!-- Els lectors de pantalla anuncien automàticament aquest input com a slider amb el seu valor --&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+   <!-- Barra de progrés -->
+    <div class="element">
+        <h2>Barra de progrés</h2>
+        <!-- Barra de progrés amb etiqueta descriptiva -->
+        <label for="progress1">Progrés de la tasca:</label>
+        <progress id="progress1" value="70" max="100">70%</progress>
+        <!-- L'etiqueta proporciona un nom accessible per a la barra de progrés -->
+        <!-- Sense l'atribut value, la barra indicaria un procés indeterminat -->
+        <!-- Footer -->
+        <div class="tooltip">
+            &lt;!-- Barra de progrés amb etiqueta descriptiva --&gt;
+            &lt;label for="progress1"&gt;Progrés de la tasca:&lt;/label&gt;
+            &lt;progress id="progress1" value="70" max="100"&gt;70%&lt;/progress&gt;
+            &lt;!-- L'etiqueta proporciona un nom accessible per a la barra de progrés --&gt;
+            &lt;!-- Sense l'atribut value, la barra indicaria un procés indeterminat --&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+
+    </div>
+    <!-- Indicador -->
+    <div class="element">
+        <h2>Indicador</h2>
+        <!-- Indicador (meter) amb etiqueta i atributs de rang -->
+        <label for="meter1">Satisfacció dels usuaris:</label>
+        <meter id="meter1" min="0" max="10" low="3" high="7" optimum="8" value="7">
+            7 de 10
+        </meter>
+        <!-- <meter> representa un valor 7 de 10; low, high, optimum defineixen els intervals de valor subjectius -->
+        <!-- L'etiqueta associada descriu què mesura el valor -->
+
+        <div class="tooltip">
+            &lt;!-- Indicador (meter) amb etiqueta i atributs de rang --&gt;
+            &lt;label for="meter1"&gt;Satisfacció dels usuaris:&lt;/label&gt;
+            &lt;meter id="meter1" min="0" max="10" low="3" high="7" optimum="8" value="7"&gt;
+            7 de 10
+            &lt;/meter&gt;
+            &lt;!-- &lt;meter&gt; representa un valor 7 de 10; low, high, optimum defineixen els intervals de valor
+            subjectius --&gt;
+            &lt;!-- L'etiqueta associada descriu què mesura el valor --&gt;
+        </div>
+    </div>
+<!-- canvas -->
+
+ <div class="element footer">
+        <h2> Footer</h2>
+
+        <footer>
+            <p>© 2025 Nom de la teua empresa</p>
+        </footer>
+        <div class="tooltip">
+            &lt;header&gt;
+            &lt;h1&gt;Benvingut&lt;/h1&gt;
+            &lt;/header&gt;
+            &lt;footer&gt;
+            &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
+            &lt;/footer&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

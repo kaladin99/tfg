@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formularis i interacció</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="element header">
+        <header>
+            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <div class="tooltip">
+                &lt;header&gt;
+                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+                &lt;/header&gt;
+                <button class="copy-btn">Copia codi</button>
+            </div>
+        </header>
+
+    </div>
+    <div class="element sidebar">
+        <h2>Menú de navegació</h2>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="estructura.html">Estructures bàsiques</a></li>
+                <li><a href="formularis.html">Formularis i interacció</a></li>
+                <li><a href="taules.html">Taules</a></li>
+                <li><a href="navegacio.html">Navegació</a></li>
+                <li><a href="multimedia.html">Multimèdia</a></li>
+                <li><a href="interactius.html">Elements interactius</a></li>
+                <li><a href="aria.html">WAI-ARIA</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- form -->
+    <div class="element">
+        <h2>Formulari accessible</h2>
+        <details>
+            <summary>Desplega el formulari</summary>
+            <form action="#" method="post" aria-labelledby="form-title" class="formulari">
+                <h2 id="form-title">Formulari d'exemple complet</h2>
+
+                <div class="camp-formulari">
+                    <label for="nom">Nom:</label><br>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="cognom">Cognom:</label><br>
+                    <input type="text" id="cognom" name="cognom" required>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="email">Correu electrònic:</label><br>
+                    <input type="email" id="email" name="email" required aria-describedby="email-help">
+                    <br><small id="email-help">No compartirem el teu correu amb ningú.</small>
+                </div>
+
+                <fieldset class="camp-formulari">
+                    <legend>Preferències de contacte:</legend>
+                    <div>
+                        <input type="radio" id="email-contacte" name="contacte" value="email">
+                        <label for="email-contacte">Per correu electrònic</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="telefon-contacte" name="contacte" value="telefon">
+                        <label for="telefon-contacte">Per telèfon</label>
+                    </div>
+                </fieldset>
+
+                <div class="camp-formulari">
+                    <input type="checkbox" id="condicions" name="condicions" required>
+                    <label for="condicions">Accepte les condicions d'ús</label>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="pais">Selecciona el teu país:</label><br>
+                    <select id="pais" name="pais" required>
+                        <option value="">-- Escull un país --</option>
+                        <option value="espanya">Espanya</option>
+                        <option value="frança">França</option>
+                        <option value="alemanya">Alemanya</option>
+                    </select>
+                </div>
+
+                <div class="camp-formulari">
+                    <label for="missatge">Comentaris o missatge:</label><br>
+                    <textarea id="missatge" name="missatge" rows="4" cols="40"></textarea>
+                </div>
+
+                <div class="camp-formulari">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Reiniciar</button>
+                </div>
+            </form>
+        </details>
+        <div class="tooltip">
+            &lt;form action="#" method="post" aria-labelledby="form-title" class="formulari"&gt;<br>
+            &lt;h2 id="form-title"&gt;Formulari d'exemple complet&lt;/h2&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;input type="text" id="nom" name="nom" required&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;input type="text" id="cognom" name="cognom" required&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;input type="email" id="email" name="email" required aria-describedby="email-help"&gt;<br>
+            &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;fieldset class="camp-formulari"&gt;<br>
+            &lt;legend&gt;Preferències de contacte:&lt;/legend&gt;<br>
+            &lt;div&gt;<br>
+            &lt;input type="radio" id="email-contacte" name="contacte" value="email"&gt;<br>
+            &lt;label for="email-contacte"&gt;Per correu electrònic&lt;/label&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div&gt;<br>
+            &lt;input type="radio" id="telefon-contacte" name="contacte" value="telefon"&gt;<br>
+            &lt;label for="telefon-contacte"&gt;Per telèfon&lt;/label&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;/fieldset&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;input type="checkbox" id="condicions" name="condicions" required&gt;<br>
+            &lt;label for="condicions"&gt;Accepte les condicions d'ús&lt;/label&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="pais"&gt;Selecciona el teu país:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;select id="pais" name="pais" required&gt;<br>
+            &lt;option value=""&gt;-- Escull un país --&lt;/option&gt;<br>
+            &lt;option value="espanya"&gt;Espanya&lt;/option&gt;<br>
+            &lt;option value="frança"&gt;França&lt;/option&gt;<br>
+            &lt;option value="alemanya"&gt;Alemanya&lt;/option&gt;<br>
+            &lt;/select&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="missatge"&gt;Comentaris o missatge:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;textarea id="missatge" name="missatge" rows="4" cols="40"&gt;&lt;/textarea&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;button type="submit"&gt;Enviar&lt;/button&gt;<br>
+            &lt;button type="reset"&gt;Reiniciar&lt;/button&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;/form&gt;<br>
+            <button class="copy-btn">Copia codi</button>
+        </div>
+
+    </div>
+    <!-- label -->
+    <div class="camp-formulari element">
+        <label for="missatge">Açò es el que llig el lector de pantalla:</label><br>
+        <textarea id="missatge" name="missatge" rows="4" cols="40"></textarea>
+        <div class="tooltip">
+            <br>
+            &lt;div class="camp-formulari"&gt;<br>
+            &lt;label for="missatge"&gt;Comentaris o missatge:&lt;/label&gt;&lt;br&gt;<br>
+            &lt;textarea id="missatge" name="missatge" rows="4" cols="40"&gt;&lt;/textarea&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+    <!-- input -->
+    <!-- textarea -->
+    <!-- select -->
+    <div class="element">
+        <h2>Select</h2>
+        <!-- Select amb opció de marcador de posició i etiqueta associada -->
+        <label for="select1">Seleccioneu una opció:</label>
+        <select id="select1">
+            <option value="" disabled selected>Selecciona una opció</option>
+            <option value="1">Opció 1</option>
+            <option value="2">Opció 2</option>
+            <option value="3">Opció 3</option>
+        </select>
+        <div class="tooltip">
+            &lt;label for="select1"&gt;Seleccioneu una opció:&lt;/label&gt;
+            &lt;select id="select1"&gt;
+            &lt;option value="" disabled selected&gt;Selecciona una opció&lt;/option&gt;
+            &lt;option value="1"&gt;Opció 1&lt;/option&gt;
+            &lt;option value="2"&gt;Opció 2&lt;/option&gt;
+            &lt;option value="3"&gt;Opció 3&lt;/option&gt;
+            &lt;/select&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+
+    </div>
+    <!-- option -->
+    <!-- fieldset -->
+    <!-- legend -->
+    <!-- button -->
+    <div class="element">
+        <h2>Botó</h2>
+        <button type="button" aria-label="Botó">
+            <span aria-hidden="true">📨</span>
+        </button>
+        <div class="tooltip">
+            &lt;button type="button" aria-label="Envia el formulari"&gt;
+            &lt;span aria-hidden="true"&gt;📨&lt;/span&gt;
+            &lt;/button&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+ 
+    <!-- datalist -->
+
+    <div class="element footer">
+        <h2> Footer</h2>
+
+        <footer>
+            <p>© 2025 Nom de la teua empresa</p>
+        </footer>
+        <div class="tooltip">
+            &lt;header&gt;
+            &lt;h1&gt;Benvingut&lt;/h1&gt;
+            &lt;/header&gt;
+            &lt;footer&gt;
+            &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
+            &lt;/footer&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
