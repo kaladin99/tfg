@@ -11,10 +11,11 @@
     <div class="element header">
         <header>
             <h1>Guia interactiva d’elements HTML accessibles</h1>
-            <div class="tooltip">
+            <div class="">
                 &lt;header&gt;
                 &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
                 &lt;/header&gt;
+                <br>
                 <button class="copy-btn">Copia codi</button>
             </div>
         </header>
@@ -40,6 +41,7 @@
     <div class="element">
         <h2>Formulari accessible</h2>
         <details>
+
             <summary>Desplega el formulari</summary>
             <form action="#" method="post" aria-labelledby="form-title" class="formulari">
                 <h2 id="form-title">Formulari d'exemple complet</h2>
@@ -98,7 +100,11 @@
                 </div>
             </form>
         </details>
-        <div class="tooltip">
+        <details class="codi">
+            <summary>Desplega el codi </summary>
+            <br>
+            <button class="copy-btn">Copia codi</button>
+            <br>
             &lt;form action="#" method="post" aria-labelledby="form-title" class="formulari"&gt;<br>
             &lt;h2 id="form-title"&gt;Formulari d'exemple complet&lt;/h2&gt;<br>
             <br>
@@ -155,23 +161,26 @@
             &lt;button type="reset"&gt;Reiniciar&lt;/button&gt;<br>
             &lt;/div&gt;<br>
             &lt;/form&gt;<br>
-            <button class="copy-btn">Copia codi</button>
-        </div>
+            
+        </details>
 
     </div>
     <!-- label -->
     <div class="camp-formulari element">
         <label for="missatge">Açò es el que llig el lector de pantalla:</label><br>
         <textarea id="missatge" name="missatge" rows="4" cols="40"></textarea>
-        <div class="tooltip">
+        <details class="codi">
+            <summary>Desplega el codi</summary>
+            
+            <button class="copy-btn">Copia codi</button>
             <br>
             &lt;div class="camp-formulari"&gt;<br>
             &lt;label for="missatge"&gt;Comentaris o missatge:&lt;/label&gt;&lt;br&gt;<br>
             &lt;textarea id="missatge" name="missatge" rows="4" cols="40"&gt;&lt;/textarea&gt;<br>
             &lt;/div&gt;<br>
             <br>
-            <button class="copy-btn">Copia codi</button>
-        </div>
+            
+        </details>
     </div>
     <!-- input -->
     <!-- textarea -->

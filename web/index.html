@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Guia interactiva d’elements HTML accessibles</title>
+    <title>Guia interactiva d’elements HTML accessibles AccessibilidadAccesible.com</title>
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -49,30 +49,93 @@
         </div> -->
 
     </div>
- 
+
     <section class="presentacio element">
-  <h1>Benvinguts a la guia interactiva d’accessibilitat web</h1>
+        <p>
+            Aquesta aplicació web està pensada com una eina d’ajuda per a desenvolupadors i desenvolupadores
+            que volen fer les seues aplicacions web més accessibles per a persones amb discapacitat visual.
+            <br>
+            <br>
+            Aplicar criteris d’accessibilitat si no es te experiència pot resultar un procés confús i complex. Aquesta
+            guia pretén
+            simplificar aquesta tasca, oferint exemples pràctics i interactius de tots els elements HTML,
+            explicant com adaptar-los perquè siguen accessibles.
+            <br>
+            <br>
+            En navegar per les diferents seccions de la web, trobaràs elements com formularis, menús, taules, botons
+            i altres, cadascun d’ells mostrat amb el seu codi corresponent ja preparat per ser accessible.
+            Passant el ratolí per damunt de cada exemple, apareixerà un recuadre (tooltip) amb el codi HTML que pots
+            copiar i adaptar al teu projecte.
+            La idea es modificar el contingut de cada etiqueta però sense tocar la seua estructura ni els seus atributs,
+            que son els que fan accessible a la etiqueta. 
 
-  <p>
-    Aquesta aplicació web està pensada com una eina d’ajuda per a desenvolupadors i desenvolupadores que volen fer les seues aplicacions web més accessibles per a persones amb discapacitat visual.
-  </p>
+            <br>
+            <br>
+            Aquesta guia no automatitza l’accessibilitat, sinó que et dona les eines i coneixements necessaris per a
+            implementar-la correctament, entenent què cal fer i per què.
+        </p>
 
-  <p>
-    Sovint, aplicar criteris d’accessibilitat pot resultar un procés llarg i complex. Aquesta guia pretén simplificar aquesta tasca, oferint exemples pràctics i interactius de tots els elements HTML, explicant com adaptar-los perquè siguen accessibles.
-  </p>
+        <p><strong>Recorda:</strong> una web accessible no sols ajuda a les persones amb discapacitat visual, sinó que
+            millora l’experiència d’usuari per a tothom.</p>
+    </section>
 
-  <p>
-    En navegar per les diferents seccions de la web, trobaràs elements com formularis, menús, taules, botons i molts altres, cadascun d’ells mostrat amb el seu codi corresponent ja preparat per ser accessible. Passant el ratolí per damunt de cada exemple, apareixerà un recuadre (tooltip) amb el codi HTML que pots copiar i adaptar al teu projecte.
-  </p>
+    <section class="explicacio element">
+        <h2>Conceptes generals de l'accessibilitat</h2>
+        <p>Fer una aplicació web accessible no depén només del disseny visual, sinó també de
+            l’estructura del codi. La base fonamental és utilitzar HTML semàntic,
+            ja que aquest permet als navegadors i als lectors de pantalla interpretar
+            correctament la jerarquia i la funció dels diferents elements.
+            <br>
+            <br>
+            Per exemple, etiquetes com &lt;header&gt;,&lt;main&gt;,&lt;nav&gt;,&lt;section&gt;o &lt;footer&gt;
+            defineixen àrees clares dins d’una pàgina, mentre que &lt;h1&gt; fins a &lt;h6&gt;
+            estableixen els diferents nivells d’encapçalaments.
+            <br>
+            <br>
+            Es a dir tot i que es pot fer un botó amb etiquetes com div,a o span i una combinació de css i javaScript
+            i a experiència d'usuari seria igual, una persona no vident que utilitze un lector de pantalla no podria
+            reconeixer correctament que està davant d'un botó.
+            <br>
+            <br>
+            Per tant les bases serien les seguents:
+        <ul>
+            <li>Ús correcte de l’HTML semàntic (&lt;header&gt;, &lt;main&gt;, &lt;nav&gt;, &lt;section&gt; o &lt;footer&gt;)</li>
+            <li>Etiqueta alt per descriure imatges rellevants</li>
+            <li>Associa etiquetes &lt;label&gt; amb &lt;input&gt;en formularis.</li>
+            <li>Colors amb contrast suficient entre text i fons.</li>
+        </ul>
+        </p>
+    </section>
 
-  <p>
-    Aquesta guia no automatitza l’accessibilitat, sinó que et dona les eines i coneixements necessaris per a implementar-la correctament, entenent què cal fer i per què.
-  </p>
+    <section class="Explicacio element">
+        <h2>Component d'integració avançada</h2>
+        <p>
+            Solament amb un correcte ús del HTML natiu no es pot fer correctament una aplicació web 
+            relativament complexa accessible hi ha components que no són natius d’HTML (com sliders, pestanyes ,menús desplegables
+             i altres elements personalitzats que no tenen comportament HTML semàntic per defecte.),
+            en aquestos casos s’utilitza el conjunt d’atributs WAI-ARIA (Accessible Rich Internet Applications). 
+            <br>
+            <br>
+            Aquests atributs proporcionen informació addicional als lectors de pantalla sobre el rol,
+            l’estat i el nom d’un element, quan al llarg de l'aplicació estiguen atributs d'aquest estil:
+            aria-label, aria-labelledby, aria-hidden o role es perque no es pot fer accessible amb el HTML natiu.
+            Els atributs WAI-ARIA no canvia el comportament visual de l’element, però li proporciona informació 
+            extra al lector de pantalla perquè l’usuari puga entendre:
+            <ul>
+                <li>Quin és el rol d’un element (role="button", role="dialog"…)</li>
+                <li>Quin és el seu nom accessible (aria-label="Tancar finestra")</li>
+                <li>El seu estat actual (aria-expanded="false", aria-checked="true"…)</li>
+            </ul>
+        </p>
 
-  <p><strong>Recorda:</strong> una web accessible no sols ajuda a les persones amb discapacitat visual, sinó que millora l’experiència d’usuari per a tothom.</p>
-</section>
-
-    
+    </section>
+    <section class="Explicacio element">
+        <h2>Bibliografía</h2>
+        <br>
+        <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Web de la W3C</a> <br>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility">Web amb exemples </a>
+        <a href="https://dequeuniversity.com/rules/axe/4.10/">dequeuniversity</a>
+    </section>
 
     <div class="element footer">
         <h2> Footer</h2>
