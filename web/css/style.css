@@ -21,6 +21,7 @@ h1 {
   text-align: center;
 }
 .codi{
+  
   padding: 1rem;
   /* background: #e3f7fa;
   border: 1px solid #C3C6CF;
@@ -204,3 +205,23 @@ button:hover {
   background-color: #0056b3;
 }
 
+.borde{
+ 
+  background: #FAF9FD;
+  border: 1px solid #C3C6CF;
+  padding: 1rem 1rem;
+  margin: 0.7rem;
+  border-radius: 10px;
+   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+   transition: transform 0.3s ease;
+}
+.borde:hover{
+ background: #daeaf8; 
+ transform: scale(1.01);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 35%; /* En lloc del 100% per defecte */
+}
