@@ -10,7 +10,14 @@
 <body>
     <div class="element header">
         <header>
-            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <div class="element-header">
+                <h1>Guia interactiva d’elements HTML accessibles</h1>
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal"
+                    data-info="Aquesta capçalera no utilitza ningún element esècial d'accessibilitat mes enllà del correcte ús de l'html.">
+                    ℹ️
+                </button>
+            </div>
             <details class="codi">
                 <summary>Codi del header</summary>
                 <br>
@@ -24,6 +31,10 @@
         </header>
 
     </div>
+
+
+
+
     <div class="element sidebar">
         <h2>Menú de navegació</h2>
         <nav aria-label="Menú principal">
@@ -42,6 +53,22 @@
             <summary>Codi del menú</summary>
             <br>
             <button class="copy-btn">Copia codi</button>
+            &lt;div class="element sidebar" role="complementary"&gt;<br>
+            &lt;h2 id="titol-menu"&gt;Menú de navegació&lt;/h2&gt;<br>
+            &lt;nav aria-labelledby="titol-menu"&gt;<br>
+            &lt;ul&gt;<br>
+            &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Inici&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="estructura.html"&gt;Estructures bàsiques&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="formularis.html"&gt;Formularis&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="taules.html"&gt;Taules&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="navegacio.html"&gt;Navegació&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="multimedia.html"&gt;Multimèdia&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="interactius.html"&gt;Elements interactius&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="aria.html"&gt;WAI-ARIA&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;/ul&gt;<br>
+            &lt;/nav&gt;<br>
+            &lt;/div&gt;<br>
+
         </details>
     </div>
 
@@ -335,21 +362,28 @@
             <p>© 2025 Nom de la teua empresa</p>
         </footer>
         <details class="codi">
-            <summary>Codi del Footer</summary> 
+            <summary>Codi del Footer</summary>
             <br>
             <button class="copy-btn">Copia codi</button>
             <br>
             &lt;footer&gt;
             &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
             &lt;/footer&gt;
-            
+
 
         </details>
-        
+
     </div>
 
-
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Informació d’accessibilitat</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn">Tancar</button>
+        </div>
+    </div>
     <script src="script.js"></script>
+
 </body>
 
 </html>
