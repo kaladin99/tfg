@@ -35,14 +35,127 @@
             </ul>
         </nav>
     </div>
-    <!-- main -->
+    <!-- tipus de llistes -->
+     <div class="element">
+        <h2>Tipus de llistes</h2>
+    <!-- llista desordenada -->
+    <div class="borde">
+        <h2>Llista desordenada: &lt;ul&gt;</ul>
+        </h2>
+        <div class="element-header">
+            <ul>
+                <li>Element de llista 1</li>
+                <li>Element de llista 2</li>
+                <li>Element de llista 3</li>
+            </ul>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="L’accessibilitat es garanteix perquè <strong>&ltul&gt</strong> i <strong>&ltli&gt</strong> tenen semàntica nativa reconeguda pels lectors de pantalla,
+                 que anuncien el nombre total d’elements i la seua posició dins la llista. No requereix atributs ARIA addicionals per transmetre l’estructura i l’ordre.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;ul&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;Element 1&lt;/li&gt;
+    &lt;li&gt;Element 2&lt;/li&gt;
+    &lt;li&gt;Element 3&lt;/li&gt;
+&lt;/ul&gt;
+        </code></pre>
+        </details>
+    </div>
+    <!-- fi de la llista desordenada -->
+     
+    <!-- llista ordenada -->
+    <div class="borde">
+        <h2>Llista ordenada: &lt;ul&gt;</h2>
+        <div class="element-header">
+            <ol start="4">
+                <li>Pas 4</li>
+                <li>Pas 5</li>
+                <li>Pas 6</li>
+            </ol>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="L’atribut <strong>start</strong> en <strong>&ltol&gt</strong> indica la numeració des d’un valor personalitzat.<br>
+                 Els lectors de pantalla detecten aquest valor inicial i anuncien correctament la posició de cada element, mantenint la semàntica i l’ordre intactes.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;ol&gt; </summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;ol start="4"&gt;
+    &lt;li&gt;Pas 4&lt;/li&gt;
+    &lt;li&gt;Pas 5&lt;/li&gt;
+    &lt;li&gt;Pas 6&lt;/li&gt;
+&lt;/ol&gt;
+        </code></pre>
+        </details>
+    </div>
+
+    <!-- Fi de llista ordenada  -->
+     
+     <!-- Llista de definicions -->
+      <div class="borde">
+    <h2>Llista de definicions:&lt;dl&gt;</h2>
+    <div class="element-header">
+        <dl>
+            <dt>HTML</dt>
+            <dd>Llenguatge de marcat utilitzat per estructurar contingut web.</dd>
+<br>
+            <dt>CSS</dt>
+            <dd>Llenguatge utilitzat per donar estil al contingut HTML.</dd>
+<br>
+            <dt>JavaScript</dt>
+            <dd>Llenguatge de programació que afegeix interactivitat a les pàgines web.</dd>
+        </dl>
+
+        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+            aria-controls="info-modal"
+            data-info="En aquest cas <strong>&ltdl&gt</strong>, <strong>&ltdt&gt</strong> i <strong>&ltdd&gt</strong> tenen semàntica nativa per representar definicions i descripcions.<br>
+             Els lectors de pantalla anuncien cada terme junt amb la seua definició, mantenint la relació semàntica sense requerir atributs ARIA addicionals.">
+            ℹ️
+        </button>
+    </div>
+
+    <details class="codi">
+        <summary>Codi del &lt;dl&gt;</summary>
+        <button class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Llenguatge de marcat utilitzat per estructurar contingut web.&lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Llenguatge utilitzat per donar estil al contingut HTML.&lt;/dd&gt;
+
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;Llenguatge de programació que afegeix interactivitat a les pàgines web.&lt;/dd&gt;
+&lt;/dl&gt;
+        </code></pre>
+    </details>
+</div>
+
+
+      <!-- Fi de llista de definicions -->
+</div>
+     <!-- Fi de tipus de llistes -->
     <!-- section -->
     <!-- Article -->
     <!-- aside -->
     <!-- nav -->
     <!-- h-->
     <!-- p-->
- <div class="element footer">
+    <div class="element footer">
         <h2> Footer</h2>
 
         <footer>
@@ -60,6 +173,14 @@
     </div>
 
 
+    <!-- codi del modal, l'utilitze una vegada per pàgina -->
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Informació d’accessibilitat</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn">Tancar</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 

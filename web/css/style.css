@@ -70,6 +70,7 @@ h1 {
     flex:none;
 }
 .element.sidebar{
+   margin: 2.4% 1%;
    background: #D7E3FD
 ;
   /* position: relative; */
@@ -226,7 +227,12 @@ textarea {
   width: 35%; /* En lloc del 100% per defecte */
 }
 
-
+#condicions{
+  margin-right: -20rem;
+}
+#send-button{
+  margin-right: -37rem;
+}
 
 .element-header {
   display: flex;

@@ -8,3 +8,22 @@
 Referenciar una imatge
  
 \ref{fig:CC}
+
+
+
+
+codi del botó:
+
+
+<div class="element-header"></div>
+
+
+
+ <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+ 		 aria-controls="info-modal"
+            data-info="Aquesta capçalera no utilitza ningún element esècial d'accessibilitat mes enllà del correcte ús de l'html.">
+            ℹ️
+ </button>
+
+
+<strong>&ltlegend&gt</strong>

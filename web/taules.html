@@ -40,11 +40,28 @@
         </nav>
     </div>
 
-
+    <strong></strong>
     <!--Taula  -->
     <div class="element">
-        <h2>Taula accessible</h2>
-        <table>
+        <div class="element-header">
+            <h2>Taula accessible</h2>
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal" data-info="En les taules es important utilitzar correctament l'etiqueta <strong>&ltcaption&gt</strong>,
+                per a proporcionar un titol descriptiu que llisca el lector de pantalla,
+                els blocs <strong>&ltthead&gt</strong>  i <strong>&lttbody&gt</strong>  ter tal de separar semanticament la capçalera del cos de la taula 
+                i utilitzar els atributs  <strong>scope='col'</strong> i <strong>scope='row'</strong> per a indicar larelació entre les cel·les i les seues capçaleres.
+                <br>
+                També s'ha utilitzat l'atribut <strong>aria-describedby</strong> en el que es fa referència al paragraf ocult que sols
+                llig el lector de pantalla, i posa en context al usuari sobre la taula">
+                ℹ️
+            </button>
+
+        </div>
+        <br>
+        <p id="taula-desc" hidden>Taula amb els noms dels participants, la valoració del servei i els seus comentaris.
+        </p>
+
+        <table aria-describedby="taula-desc">
             <caption>Resultats de l'enquesta </caption>
             <!-- Descripció per a usuaris de tecnologies assistives -->
             <thead>
@@ -78,6 +95,8 @@
             <br>
             <button class="copy-btn">Copia codi</button>
             <br>
+            &lt;p id="taula-desc" hidden&gt;Taula amb els noms dels participants, la valoració del servei i els seus
+            comentaris.&lt;/p&gt;<br>
             &lt;table&gt;<br>
             &lt;caption&gt;Resultats de l'enquesta de satisfacció&lt;/caption&gt;<br>
             &lt;thead&gt;<br>
@@ -108,6 +127,69 @@
         </details>
     </div>
     <!-- caption -->
+    <!-- <div class="element">
+        <h2>&lt;table&gt;</h2>
+        <div class="element-header">
+            <table>
+                <caption>Llista de productes</caption>
+                <thead>
+                    <tr>
+                        <th>Producte</th>
+                        <th>Preu</th>
+                        <th>Estoc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Llapis</td>
+                        <td>0,50 €</td>
+                        <td>Disponible</td>
+                    </tr>
+                    <tr>
+                        <td>Quadern</td>
+                        <td>2,00 €</td>
+                        <td>Esgotat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="L’accessibilitat es garanteix perquè <strong>&lttable&gt</strong> utilitza <strong>&ltcaption&gt</strong> per descriure la taula, <strong>&ltthead&gt</strong> i <strong>&ltth&gt</strong> per identificar les capçaleres, i la relació entre cel·les i capçaleres es gestiona automàticament pels lectors de pantalla. Això permet anunciar el context de cada dada quan es recorre la taula.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;table&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;table&gt;
+    &lt;caption&gt;Llista de productes&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Producte&lt;/th&gt;
+            &lt;th&gt;Preu&lt;/th&gt;
+            &lt;th&gt;Estoc&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Llapis&lt;/td&gt;
+            &lt;td&gt;0,50 €&lt;/td&gt;
+            &lt;td&gt;Disponible&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Quadern&lt;/td&gt;
+            &lt;td&gt;2,00 €&lt;/td&gt;
+            &lt;td&gt;Esgotat&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+        </code></pre>
+        </details>
+    </div> -->
+
     <!-- thead -->
     <!-- tbody -->
     <!-- tfoot -->
@@ -134,7 +216,14 @@
         </details>
 
     </div>
-
+    <!-- codi del modal, l'utilitze una vegada per pàgina -->
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Informació d’accessibilitat</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn">Tancar</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

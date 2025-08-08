@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.info-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const infoText = btn.getAttribute('data-info');
-      modalText.textContent = infoText; // permet HTML bàsic com <label>
+      //modalText.textContent = infoText; // permet HTML bàsic com <label>
+      modalText.innerHTML = infoText; // permet HTML bàsic com <label>
       modal.hidden = false;
       btn.setAttribute('aria-expanded', 'true');
       closeBtn.focus();

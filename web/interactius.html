@@ -36,117 +36,197 @@
         </nav>
     </div>
 
-  <!-- Detalls -->
+    <!-- Detalls -->
     <div class="element">
-        <h2>Detalls</h2>
-        <!-- Element <details> per a contingut desplegable -->
-        <details>
-            <summary>Més detalls</summary>
-            <!-- El text de <summary> actua com a botó per mostrar/ocultar el contingut -->
-            <p>Informació desplegable.</p>
+        <h2>Details i summary</h2>
+        <div class="element-header">
+            <details class="codi">
+                <summary>Més detalls</summary>
+                <p>Informació desplegable.</p>
+            </details>
 
-        </details>
-        <div class="tooltip">
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="<strong>&ltsummary&gt</strong> és focusable i es pot activar amb teclat o ratol. <br>
+                 L’estat obert/tancat es comunica automàticament als lectors de pantalla cosa que si es fa per codi js no resulta accessible.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;details&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
             &lt;details&gt;
             &lt;summary&gt;Més detalls&lt;/summary&gt;
-            &lt;!-- El text de &lt;summary&gt; actua com a botó per mostrar/ocultar el contingut --&gt;
-            &lt;p&gt;Aquí hi ha informació detallada que es pot amagar o mostrar.&lt;/p&gt;
+            &lt;p&gt;Informació desplegable.&lt;/p&gt;
             &lt;/details&gt;
-            <button class="copy-btn">Copia codi</button>
-        </div>
+        </code></pre>
+        </details>
     </div>
-<!-- summary -->
-<!-- dialog -->
- <div class="element">
-        <h2>Diàleg</h2>
-        <!-- Diàleg modal natiu amb títol accessible i botons per obrir/tancar -->
-        <button type="button" onclick="document.getElementById('dialog1').showModal()">Obre el diàleg</button>
 
-        <dialog id="dialog1" aria-labelledby="dialogTitle">
-            <h2 id="dialogTitle">Títol del diàleg</h2>
-            <p>Contingut del diàleg.</p>
-            <button type="button" onclick="this.closest('dialog').close()">Tanca</button>
-            <!-- 'aria-labelledby' associa el títol al diàleg per a l'accessibilitat -->
-            <!-- showModal() obre el diàleg de manera modal; el botó interior el tanca -->
-        </dialog>
-        <div class="tooltip">
-            &lt;!-- Diàleg modal natiu amb títol accessible i botons per obrir/tancar --&gt;
-            &lt;button type="button" onclick="document.getElementById('dialog1').showModal()"&gt;Obre el
-            diàleg&lt;/button&gt;
+    <!-- summary -->
+    <!-- dialog -->
+    <div class="element">
+        <h2>Dialeg</h2>
+        <div class="element-header">
+            <button type="button" onclick="document.getElementById('dialog1').showModal()"
+                style="margin-top: 1rem;margin-bottom: 0,6rem;">Obre el diàleg</button>
 
-            &lt;dialog id="dialog1" aria-labelledby="dialogTitle"&gt;
-            &lt;h2 id="dialogTitle"&gt;Títol del diàleg&lt;/h2&gt;
-            &lt;p&gt;Contingut del diàleg.&lt;/p&gt;
-            &lt;button type="button" onclick="this.closest('dialog').close()"&gt;Tanca&lt;/button&gt;
-            &lt;!-- 'aria-labelledby' associa el títol al diàleg per a l'accessibilitat --&gt;
-            &lt;!-- showModal() obre el diàleg de manera modal; el botó interior el tanca --&gt;
-            &lt;/dialog&gt;
-            <button class="copy-btn">Copia codi</button>
+            <dialog id="dialog1" aria-labelledby="dialogTitle">
+                <h2 id="dialogTitle">Títol del diàleg</h2>
+                <p>Contingut del diàleg.</p>
+                <button type="button" onclick="this.closest('dialog').close()">Tanca</button>
+            </dialog>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal" data-info="L’etiqueta <strong>&lt;dialog&gt;</strong> crea una finestra modal o no modal
+                 que pot mostrar contingut independent de la pàgina principal. L’atribut <strong>aria-labelledby</strong> 
+                 associa un títol descriptiu al diàleg per a lectors de pantalla. La funció <strong>showModal()</strong> 
+                 obri el diàleg com a modal, i el mètode <strong>close()</strong> el tanca.">
+                ℹ️
+            </button>
         </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;dialog&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;button type="button" onclick="document.getElementById('dialog1').showModal()"&gt;Obre el diàleg&lt;/button&gt;
+
+&lt;dialog id="dialog1" aria-labelledby="Titol del Dialeg"&gt;
+    &lt;h2 id="dialogTitle"&gt;Títol del diàleg&lt;/h2&gt;
+    &lt;p&gt;Contingut del diàleg.&lt;/p&gt;
+    &lt;button type="button" onclick="this.closest('dialog').close()"&gt;Tanca&lt;/button&gt;
+&lt;/dialog&gt;
+        </code></pre>
+        </details>
     </div>
-<!-- progress -->
-   <!-- Control lliscant -->
+
+    <!-- progress -->
+    <!-- Control lliscant -->
     <div class="element">
         <h2>Control lliscant</h2>
-        <!-- Control lliscant (slider) amb etiqueta -->
-        <label for="range1">Volum:</label>
-        <input type="range" id="range1" name="volum" min="0" max="100" value="50">
-        <!-- Min, max i value defineixen el rang i el valor inicial -->
-        <!-- Els lectors de pantalla anuncien automàticament aquest input com a slider amb el seu valor -->
-        <div class="tooltip">
-            &lt;!-- Control lliscant (slider) amb etiqueta --&gt;
-            &lt;label for="range1"&gt;Volum:&lt;/label&gt;
-            &lt;input type="range" id="range1" name="volum" min="0" max="100" value="50"&gt;
-            &lt;!-- Min, max i value defineixen el rang i el valor inicial --&gt;
-            &lt;!-- Els lectors de pantalla anuncien automàticament aquest input com a slider amb el seu valor --&gt;
-            <button class="copy-btn">Copia codi</button>
+        <div class="element-header">
+            <label for="range1" style="margin-right: -39rem;">Volum:</label>
+            <input type="range" id="range1" name="volum" min="0" max="100" value="50" role="slider" aria-valuemin="0"
+                aria-valuemax="100" aria-valuenow="50" aria-label="Control de volum">
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="L’element <strong>&lt;input type=&quot;range&quot;&gt;</strong> amb el rol <strong>slider</strong> i atributs <strong>aria-valuemin</strong>, <strong>aria-valuemax</strong> i <strong>aria-valuenow</strong> proporciona als lectors de pantalla informació clara sobre el valor actual i els límits del control lliscant. A més, l’atribut <strong>aria-label</strong> descriu la funció del control per a usuaris amb discapacitat visual.">
+                ℹ️
+            </button>
         </div>
+
+        <details class="codi">
+            <summary>Codi de l’&lt;input type="range"&gt; amb ARIA</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;label for="range1"&gt;Volum:&lt;/label&gt;
+&lt;input type="range" id="range1" name="volum" min="0" max="100" value="50"
+    role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Control de volum"&gt;
+        </code></pre>
+        </details>
     </div>
 
-   <!-- Barra de progrés -->
+    <!-- Fi control lliscant -->
+    <!-- Barra de progrés -->
     <div class="element">
         <h2>Barra de progrés</h2>
-        <!-- Barra de progrés amb etiqueta descriptiva -->
-        <label for="progress1">Progrés de la tasca:</label>
-        <progress id="progress1" value="70" max="100">70%</progress>
-        <!-- L'etiqueta proporciona un nom accessible per a la barra de progrés -->
-        <!-- Sense l'atribut value, la barra indicaria un procés indeterminat -->
-        <!-- Footer -->
-        <div class="tooltip">
-            &lt;!-- Barra de progrés amb etiqueta descriptiva --&gt;
-            &lt;label for="progress1"&gt;Progrés de la tasca:&lt;/label&gt;
-            &lt;progress id="progress1" value="70" max="100"&gt;70%&lt;/progress&gt;
-            &lt;!-- L'etiqueta proporciona un nom accessible per a la barra de progrés --&gt;
-            &lt;!-- Sense l'atribut value, la barra indicaria un procés indeterminat --&gt;
-            <button class="copy-btn">Copia codi</button>
+        <div class="element-header">
+            <label for="progres" style="margin-right: -33rem;">Progrés de descàrrega:</label>
+            <progress id="progres" value="60" max="100">60%</progress>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="L’etiqueta <strong>&lt;progress&gt;</strong> s’utilitza per mostrar l’estat de progrés d’una tasca en curs. El contingut textual entre les etiquetes serveix com a valor alternatiu per a navegadors o lectors de pantalla que no interpreten l’element gràfic. És recomanable associar-lo amb una <strong>&lt;label&gt;</strong> descriptiva per proporcionar context.">
+                ℹ️
+            </button>
         </div>
 
+        <details class="codi">
+            <summary>Codi del &lt;progress&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;label for="progres"&gt;Progrés de descàrrega:&lt;/label&gt;
+&lt;progress id="progres" value="60" max="100"&gt;60%&lt;/progress&gt;
+        </code></pre>
+        </details>
     </div>
-    <!-- Indicador -->
+    <!-- fi barra de progrés -->
+    <!-- inici meter -->
     <div class="element">
         <h2>Indicador</h2>
-        <!-- Indicador (meter) amb etiqueta i atributs de rang -->
-        <label for="meter1">Satisfacció dels usuaris:</label>
-        <meter id="meter1" min="0" max="10" low="3" high="7" optimum="8" value="7">
-            7 de 10
-        </meter>
-        <!-- <meter> representa un valor 7 de 10; low, high, optimum defineixen els intervals de valor subjectius -->
-        <!-- L'etiqueta associada descriu què mesura el valor -->
+        <div class="element-header">
+            <label for="nivell" style="margin-right: -42rem;">Nivell de bateria:</label>
+            <meter id="nivell" min="0" max="100" value="75">75%</meter>
 
-        <div class="tooltip">
-            &lt;!-- Indicador (meter) amb etiqueta i atributs de rang --&gt;
-            &lt;label for="meter1"&gt;Satisfacció dels usuaris:&lt;/label&gt;
-            &lt;meter id="meter1" min="0" max="10" low="3" high="7" optimum="8" value="7"&gt;
-            7 de 10
-            &lt;/meter&gt;
-            &lt;!-- &lt;meter&gt; representa un valor 7 de 10; low, high, optimum defineixen els intervals de valor
-            subjectius --&gt;
-            &lt;!-- L'etiqueta associada descriu què mesura el valor --&gt;
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal" data-info="L’etiqueta <strong>&ltmeter&gt</strong> s’utilitza per representar visualment una mesura dins d’un rang conegut, com ara percentatges o valors quantitatius. 
+                És accessible per defecte en els lectors de pantalla, especialment si s’acompanya d’una <strong>&lt;label&gt;</strong> 
+                clara que indique el context del valor mostrat.">
+                ℹ️
+            </button>
         </div>
-    </div>
-<!-- canvas -->
 
- <div class="element footer">
+        <details class="codi">
+            <summary>Codi del &lt;meter&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+            &lt;label for="nivell"&gt;Nivell de bateria:&lt;/label&gt;
+            &lt;meter id="nivell" min="0" max="100" value="75"&gt;75%&lt;/meter&gt;
+        </code></pre>
+        </details>
+    </div>
+
+    <!-- fi meter -->
+    <!--  inici optgroup -->
+    <div class="element">
+        <h2>&lt;optgroup&gt;</h2>
+        <div class="element-header">
+            <label for="llenguatge">Selecciona un llenguatge:</label>
+            <select id="llenguatge" name="llenguatge">
+                <optgroup label="Llenguatges de programació">
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="csharp">C#</option>
+                </optgroup>
+                <optgroup label="Llenguatges de marcat">
+                    <option value="html">HTML</option>
+                    <option value="xml">XML</option>
+                </optgroup>
+            </select>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="L’etiqueta &ltoptgroup&gt s’utilitza per agrupar opcions dins d’un element &ltselect&gt. El seu atribut 'label' proporciona un títol descriptiu per a cada grup, que pot ser interpretat pels lectors de pantalla, facilitant la navegació per opcions agrupades.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;optgroup&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;label for="llenguatge"&gt;Selecciona un llenguatge:&lt;/label&gt;
+&lt;select id="llenguatge" name="llenguatge"&gt;
+    &lt;optgroup label="Llenguatges de programació"&gt;
+        &lt;option value="python"&gt;Python&lt;/option&gt;
+        &lt;option value="java"&gt;Java&lt;/option&gt;
+        &lt;option value="csharp"&gt;C#&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label="Llenguatges de marcat"&gt;
+        &lt;option value="html"&gt;HTML&lt;/option&gt;
+        &lt;option value="xml"&gt;XML&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;
+        </code></pre>
+        </details>
+    </div>
+    <!-- fi optgroup -->
+
+    <div class="element footer">
         <h2> Footer</h2>
 
         <footer>
@@ -164,6 +244,14 @@
     </div>
 
 
+    <!-- codi del modal, l'utilitze una vegada per pàgina -->
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Informació d’accessibilitat</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn">Tancar</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 

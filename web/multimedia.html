@@ -10,7 +10,7 @@
 <body>
     <div class="element header">
         <header>
-            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <h1>Enllaços i Eelements multimedia</h1>
             <div class="tooltip">
                 &lt;header&gt;
                 &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
@@ -35,24 +35,254 @@
             </ul>
         </nav>
     </div>
+    <!-- enllaços -->
+    <div class="element">
+        <h2>Enllaços</h2>
 
-<!-- img -->
- <div class="element">
-        <h2>Imatge amb text alternatiu</h2>
-        <img src="img/logo_upv.png" alt="Logotip de l’empresa">
-        <div class="tooltip">
-            &lt;img src="logo.png" alt="Logotip de l’empresa"&gt;
-            <button class="copy-btn">Copia codi</button>
+        <!-- Enllaç <a> -->
+        <div class="borde">
+            <h2> Enllaç de text &lt;a&gt;</h2>
+            <div class="element-header">
+                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Visita google.com</a>
+
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal" data-info="En aquest cas <strong>&lta&gt</strong> utilitza un text d’enllaç descriptiu que indica clarament la destinació. <br>
+            L’atribut <strong>rel=&quot;noopener noreferrer&quot;</strong> millora la seguretat i evita problemes amb lectors de pantalla en obrir pestanyes noves.<br>
+            A més, indica que s’obrirà en una finestra nova.">
+                    ℹ️
+                </button>
+            </div>
+
+            <details class="codi">
+                <summary>Codi del &lt;a&gt;</summary>
+                <button class="copy-btn">Copia codi</button>
+                <pre><code>
+                &lt;a href="https://www.google.com" target="_blank" rel="noopener noreferrer"&gt;
+                Visita Example.com
+                &lt;/a&gt;
+        </code></pre>
+            </details>
         </div>
-    </div>
-<!-- figure -->
-<!-- figCaption -->
-<!-- audio -->
-<!-- video -->
-<!-- track -->
-<!-- role presentation -->
 
- <div class="element footer">
+        <!--Fi  Enllaç <a>-->
+        <!-- Enllaç <a> amb icono -->
+        <div class="borde">
+            <h2>Enllaç &lt;a&gt; amb només icona</h2>
+            <div class="element-header">
+                <a href="https://www.gogle.com" aria-label="Visita google.com">
+                    <img src="./img/world-wide-web_841364.png" alt="" width="24" height="24">
+                </a>
+
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal"
+                    data-info="En aquest cas si que es necessari l'us d'atributs aria.<br>
+                     <strong>&lta&gt</strong> amb només una icona inclou l’atribut <strong>aria-label</strong>, que proporciona un text alternatiu descrit pels lectors de pantalla. <br>
+                    L’atribut <strong>alt</strong> de la imatge es deixa buit per evitar redundància, ja que la descripció ja està en l’&lta&gt.">
+                    ℹ️
+                </button>
+            </div>
+
+            <details class="codi">
+                <summary>Codi de l’&lt;a&gt; amb només icona</summary>
+                <button class="copy-btn">Copia codi</button>
+                <pre><code>
+&lt;a href="https://www.google.com" aria-label="Visita google.com"&gt;
+    &lt;img src="icona-enllac.svg" alt="" width="24" height="24"&gt;
+&lt;/a&gt;
+        </code></pre>
+            </details>
+        </div>
+
+        <!--  fi enllaç a am icono -->
+
+        <!-- fi enllacos -->
+    </div>
+    <!-- di dels enllaços -->
+
+    <!-- imatges -->
+    <div class="element">
+        <!-- img -->
+        <div class="borde">
+            <h2>Imatge: &lt;img&gt;</h2>
+            <div class="element-header">
+                <img src="img/logo_upv.png" alt="Logotip en gris de la UPV, Universitat Politacnica de Valencia"
+                    width="450" height="200">
+
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal" data-info="L’accessibilitat es garanteix perquè <strong>&ltimg&gt</strong> inclou un atribut <strong>alt</strong> descriptiu que transmet la informació essencial 
+            de la imatge a usuaris de lectors de pantalla. <br>
+            Les dimensions amb <strong>width</strong> i <strong>height</strong> ajuden a prevenir moviments inesperats del 
+            contingut (layout shift).">
+                    ℹ️
+                </button>
+            </div>
+
+            <details class="codi">
+                <summary>Codi de l’&lt;img&gt;</summary>
+                <button class="copy-btn">Copia codi</button>
+                <pre><code>
+&lt;img src="paisatge.jpg" alt="Paisatge de muntanya amb un llac al davant" width="300" height="200"&gt;
+        </code></pre>
+            </details>
+        </div>
+
+
+        <!-- fi de img -->
+        <!-- imatge decorativa -->
+        <div class="borde">
+            <h2> Imatge &lt;img&gt; decorativa:</h2>
+            <div class="element-header">
+                <img src="img/imatge_aleatoria.png" alt="" width="300" height="200">
+
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal" data-info="Les imatges decoratives són elements visuals que no aporten informació important per a la comprensió de l'aplicació web i que si un lector de pantalla les anunciara, només farien “soroll” informatiu.<br>
+            Aleshores s'utilitza <strong>alt=''</strong>, 
+            fent que els lectors de pantalla la salten.">
+                    ℹ️
+                </button>
+            </div>
+
+            <details class="codi">
+                <summary>Codi de l’&lt;img&gt; decorativa</summary>
+                <button class="copy-btn">Copia codi</button>
+                <pre><code>
+&lt;img src="separador.png" alt="" width="200" height="20"&gt;
+        </code></pre>
+            </details>
+        </div>
+
+        <!-- fi de imatge decorativa -->
+    </div>
+    <!-- fi de imatges -->
+
+    <!-- audio -->
+    <div class="element">
+        <h2>Audio:&lt;audio&gt;</h2>
+        <div class="element-header">
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                El teu navegador no admet l'etiqueta àudio.
+            </audio>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="Quan s'utilitza <strong>&ltaudio&gt</strong> es important  l’atribut <strong>controls</strong> ja que  
+                que proporciona botons natius de reproducció, pausa i volum, accessibles per teclat i anunciats pels lectors de pantalla.<br>
+                 El text alternatiu dins l’etiqueta informa l’usuari del que pasa  en cas que el navegador no admeta àudio.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi de l’&lt;audio&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    El teu navegador no admet l'etiqueta àudio.
+&lt;/audio&gt;
+        </code></pre>
+        </details>
+    </div>
+    <!-- fi del audio -->
+
+    <!-- video -->
+     <div class="element">
+    <h2>Video:&lt;video&gt;</h2>
+    <div class="element-header">
+        <video controls width="320" height="180">
+            <source src="video-exemple.mp4" type="video/mp4">
+            El teu navegador no admet l'etiqueta vídeo.
+        </video>
+
+        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+            aria-controls="info-modal"
+            data-info="Quan s'utilitza <strong>&ltvideo&gt</strong> es important l'atribut <strong>controls</strong>, que proporciona botons natius de reproducció, pausa, volum i subtítols accessibles per teclat i anunciats pels lectors de pantalla. <br>
+             També és recomanable afegir <strong>&lttrack&gt</strong> amb subtítols per a persones sordes o amb dificultats auditives.">
+            ℹ️
+        </button>
+    </div>
+
+    <details class="codi">
+        <summary>Codi del &lt;video&gt;</summary>
+        <button class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;video controls width="320" height="180"&gt;
+    &lt;source src="video-exemple.mp4" type="video/mp4"&gt;
+    El teu navegador no admet l'etiqueta vídeo.
+&lt;/video&gt;
+        </code></pre>
+    </details>
+</div>
+     <!-- fi del video -->
+
+
+
+    <!-- figure -->
+     <div class="element">
+    <h2>&lt;figure&gt;</h2>
+    <div class="element-header">
+        <figure>
+            <img src="paisatge.jpg" alt="Paisatge de muntanya amb un llac al davant" width="300" height="200">
+            <figcaption>Vista panoràmica d’un llac de muntanya al capvespre.</figcaption>
+        </figure>
+
+        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+            aria-controls="info-modal"
+            data-info="L’accessibilitat es garanteix perquè <strong>&ltfigure&gt</strong> agrupa el contingut visual amb la seua descripció mitjançant <strong>&ltfigcaption&gt</strong>. Això crea una associació semàntica que els lectors de pantalla anuncien com una unitat, mantenint el context entre la imatge i la seua explicació.">
+            ℹ️
+        </button>
+    </div>
+
+    <details class="codi">
+        <summary>Codi del &lt;figure&gt;</summary>
+        <button class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;figure&gt;
+    &lt;img src="paisatge.jpg" alt="Paisatge de muntanya amb un llac al davant" width="300" height="200"&gt;
+    &lt;figcaption&gt;Vista panoràmica d’un llac de muntanya al capvespre.&lt;/figcaption&gt;
+&lt;/figure&gt;
+        </code></pre>
+    </details>
+</div>
+
+     <!-- fi de figure -->
+      <!-- figure2 -->
+       <div class="element">
+    <h2>&lt;figure&gt; amb codi font</h2>
+    <div class="element-header">
+        <figure>
+            <pre><code>console.log('Hola món');</code></pre>
+            <figcaption>Exemple bàsic en JavaScript que mostra un missatge a la consola.</figcaption>
+        </figure>
+
+        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+            aria-controls="info-modal"
+            data-info="L’accessibilitat es garanteix perquè <strong>&ltfigure&gt</strong> agrupa el contingut (en aquest cas, codi) amb la seua descripció mitjançant <strong>&ltfigcaption&gt</strong>. Això permet que els lectors de pantalla anuncien la llegenda junt amb el codi, proporcionant context addicional.">
+            ℹ️
+        </button>
+    </div>
+
+    <details class="codi">
+        <summary>Codi del &lt;figure&gt; amb codi font</summary>
+        <button class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;figure&gt;
+    &lt;pre&gt;&lt;code&gt;console.log('Hola món');&lt;/code&gt;&lt;/pre&gt;
+    &lt;figcaption&gt;Exemple bàsic en JavaScript que mostra un missatge a la consola.&lt;/figcaption&gt;
+&lt;/figure&gt;
+        </code></pre>
+    </details>
+</div>
+
+       <!-- fi de figure2 -->
+    <!-- figCaption -->
+    <!-- audio -->
+    <!-- video -->
+    <!-- track -->
+    <!-- role presentation -->
+
+    <div class="element footer">
         <h2> Footer</h2>
 
         <footer>
@@ -70,6 +300,14 @@
     </div>
 
 
+    <!-- codi del modal, l'utilitze una vegada per pàgina -->
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Informació d’accessibilitat</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn">Tancar</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 

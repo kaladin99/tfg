@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formularis i interacció</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- MODAL ÚNIC -->
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Informació d’accessibilitat</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn">Tancar</button>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="element header">
+        <header>
+            <div class="element-header">
+                <h1>Guia interactiva d’elements HTML accessibles</h1>
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                    data-info="Aquesta capçalera no utilitza cap element especial d'accessibilitat, però fa un ús correcte de l'HTML semàntic.">ℹ️</button>
+            </div>
+            <!-- ... -->
+        </header>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="element sidebar">
+        <div class="element-header">
+            <h2>Menú de navegació</h2>
+            <button class="info-btn" aria-label="Informació del menú" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="Aquest menú utilitza la etiqueta <nav> amb aria-label per a definir el seu propòsit, i els enllaços tenen estructura jeràrquica adequada.">ℹ️</button>
+        </div>
+        <!-- ... -->
+    </div>
+
+    <!-- FORMULARI -->
+    <div class="element">
+        <div class="element-header">
+            <h2>Formulari d'exemple</h2>
+            <button class="info-btn" aria-label="Informació del formulari" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="Aquest formulari utilitza etiquetes <label> vinculades als camps, atributs required i ordre lògic de navegació amb teclat.">ℹ️</button>
+        </div>
+        <!-- ... -->
+    </div>
+
+    <!-- CAMPS FORMULARI -->
+    <div class="element">
+        <div class="element-header">
+            <h2>Comentaris o missatge</h2>
+            <button class="info-btn" aria-label="Informació del camp de missatge" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="El camp de text està etiquetat correctament amb <label> i pot ser llegit per lectors de pantalla.">ℹ️</button>
+        </div>
+        <!-- ... -->
+    </div>
+
+    <!-- FOOTER -->
+    <div class="element footer">
+        <div class="element-header">
+            <h2>Footer</h2>
+            <button class="info-btn" aria-label="Informació del peu de pàgina" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="El peu de pàgina es troba dins de la etiqueta <footer>, que indica la part final del document de forma semàntica.">ℹ️</button>
+        </div>
+        <!-- ... -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
