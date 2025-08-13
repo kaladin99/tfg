@@ -11,15 +11,11 @@
     <div class="element header">
         <header>
             <h1>Guia interactiva d’elements HTML accessibles</h1>
-            <div class="tooltip">
-                &lt;header&gt;
-                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
-                &lt;/header&gt;
-                <button class="copy-btn">Copia codi</button>
-            </div>
+            
         </header>
 
     </div>
+    <!-- menu lateral -->
     <div class="element sidebar">
         <h2>Menú de navegació</h2>
         <nav aria-label="Menú principal">
@@ -30,12 +26,12 @@
                 <li><a href="taules.html">Taules</a></li>
                 <li><a href="navegacio.html">Navegació</a></li>
                 <li><a href="multimedia.html">Multimèdia</a></li>
-                <li><a href="interactius.html">Elements interactius</a></li>
+                <li><a href="interactius.html" style="background-color: #a9bef7;">Elements interactius</a></li>
                 <li><a href="aria.html">WAI-ARIA</a></li>
             </ul>
         </nav>
     </div>
-
+<!-- fi del menu lateral -->
     <!-- Detalls -->
     <div class="element">
         <h2>Details i summary</h2>
@@ -71,7 +67,7 @@
         <h2>Dialeg</h2>
         <div class="element-header">
             <button type="button" onclick="document.getElementById('dialog1').showModal()"
-                style="margin-top: 1rem;margin-bottom: 0,6rem;">Obre el diàleg</button>
+                style="margin-top: 1rem;margin-bottom: 0.6rem;">Obre el diàleg</button>
 
             <dialog id="dialog1" aria-labelledby="dialogTitle">
                 <h2 id="dialogTitle">Títol del diàleg</h2>
@@ -92,13 +88,13 @@
             <summary>Codi del &lt;dialog&gt;</summary>
             <button class="copy-btn">Copia codi</button>
             <pre><code>
-&lt;button type="button" onclick="document.getElementById('dialog1').showModal()"&gt;Obre el diàleg&lt;/button&gt;
-
-&lt;dialog id="dialog1" aria-labelledby="Titol del Dialeg"&gt;
-    &lt;h2 id="dialogTitle"&gt;Títol del diàleg&lt;/h2&gt;
+                    &lt;button type="button" onclick="document.getElementById('dialog1').showModal()"&gt;Obre el diàleg&lt;/button&gt;
+                    &lt;dialog id="dialog1" aria-labelledby="Titol del Dialeg"&gt;
+                 &lt;h2 id="dialogTitle"&gt;Títol del diàleg&lt;/h2&gt;
     &lt;p&gt;Contingut del diàleg.&lt;/p&gt;
     &lt;button type="button" onclick="this.closest('dialog').close()"&gt;Tanca&lt;/button&gt;
 &lt;/dialog&gt;
+
         </code></pre>
         </details>
     </div>
@@ -160,7 +156,7 @@
         <h2>Indicador</h2>
         <div class="element-header">
             <label for="nivell" style="margin-right: -42rem;">Nivell de bateria:</label>
-            <meter id="nivell" min="0" max="100" value="75">75%</meter>
+            <meter id="nivell" min="0" max="100" value="55">55%</meter>
 
             <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
                 aria-controls="info-modal" data-info="L’etiqueta <strong>&ltmeter&gt</strong> s’utilitza per representar visualment una mesura dins d’un rang conegut, com ara percentatges o valors quantitatius. 
@@ -225,6 +221,46 @@
         </details>
     </div>
     <!-- fi optgroup -->
+    <!-- output -->
+    <div class="element">
+        <h2>Calcul:&lt;output&gt;</h2>
+        <div class="element-header">
+            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                <label for="a">Número 1:</label>
+                <input type="number" id="a" name="a" value="0">
+
+                <label for="b">Número 2:</label>
+                <input type="number" id="b" name="b" value="0">
+
+                <p>Resultat: <output name="result" for="a b">0</output></p>
+            </form>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="L’accessibilitat es garanteix perquè <strong>&ltoutput&gt</strong> està associat als controls d’entrada mitjançant l’atribut <strong>for</strong>, permetent que els lectors de pantalla anuncien automàticament el resultat actualitzat quan canvien els valors d’entrada.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;output&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;form oninput="result.value=parseInt(a.value)+parseInt(b.value)"&gt;
+    &lt;label for="a"&gt;Número 1:&lt;/label&gt;
+    &lt;input type="number" id="a" name="a" value="0"&gt;
+
+    &lt;label for="b"&gt;Número 2:&lt;/label&gt;
+    &lt;input type="number" id="b" name="b" value="0"&gt;
+
+    &lt;p&gt;Resultat: &lt;output name="result" for="a b"&gt;0&lt;/output&gt;&lt;/p&gt;
+&lt;/form&gt;
+        </code></pre>
+        </details>
+    </div>
+
+
+    <!-- fi del output -->
 
     <div class="element footer">
         <h2> Footer</h2>
@@ -232,15 +268,7 @@
         <footer>
             <p>© 2025 Nom de la teua empresa</p>
         </footer>
-        <div class="tooltip">
-            &lt;header&gt;
-            &lt;h1&gt;Benvingut&lt;/h1&gt;
-            &lt;/header&gt;
-            &lt;footer&gt;
-            &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
-            &lt;/footer&gt;
-            <button class="copy-btn">Copia codi</button>
-        </div>
+       
     </div>
 
 

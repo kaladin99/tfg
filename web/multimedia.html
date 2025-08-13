@@ -29,7 +29,7 @@
                 <li><a href="formularis.html">Formularis</a></li>
                 <li><a href="taules.html">Taules</a></li>
                 <li><a href="navegacio.html">Navegació</a></li>
-                <li><a href="multimedia.html">Multimèdia</a></li>
+                <li><a href="multimedia.html"style="background-color: #a9bef7;">Multimèdia</a></li>
                 <li><a href="interactius.html">Elements interactius</a></li>
                 <li><a href="aria.html">WAI-ARIA</a></li>
             </ul>
@@ -187,99 +187,105 @@
     <!-- fi del audio -->
 
     <!-- video -->
-     <div class="element">
-    <h2>Video:&lt;video&gt;</h2>
-    <div class="element-header">
-        <video controls width="320" height="180">
-            <source src="video-exemple.mp4" type="video/mp4">
-            El teu navegador no admet l'etiqueta vídeo.
-        </video>
+    <div class="element">
+        <h2>Video:&lt;video&gt;</h2>
+        <div class="element-header">
+            <video controls width="320" height="180">
+                <source src="video-exemple.mp4" type="video/mp4">
+                El teu navegador no admet l'etiqueta vídeo.
+            </video>
 
-        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-            aria-controls="info-modal"
-            data-info="Quan s'utilitza <strong>&ltvideo&gt</strong> es important l'atribut <strong>controls</strong>, que proporciona botons natius de reproducció, pausa, volum i subtítols accessibles per teclat i anunciats pels lectors de pantalla. <br>
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="Quan s'utilitza <strong>&ltvideo&gt</strong> es important l'atribut <strong>controls</strong>, que proporciona botons natius de reproducció, pausa, volum i subtítols accessibles per teclat i anunciats pels lectors de pantalla. <br>
              També és recomanable afegir <strong>&lttrack&gt</strong> amb subtítols per a persones sordes o amb dificultats auditives.">
-            ℹ️
-        </button>
-    </div>
+                ℹ️
+            </button>
+        </div>
 
-    <details class="codi">
-        <summary>Codi del &lt;video&gt;</summary>
-        <button class="copy-btn">Copia codi</button>
-        <pre><code>
+        <details class="codi">
+            <summary>Codi del &lt;video&gt;</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>
 &lt;video controls width="320" height="180"&gt;
     &lt;source src="video-exemple.mp4" type="video/mp4"&gt;
     El teu navegador no admet l'etiqueta vídeo.
 &lt;/video&gt;
         </code></pre>
-    </details>
-</div>
-     <!-- fi del video -->
-
+        </details>
+    </div>
+    <!-- fi del video -->
 
 
     <!-- figure -->
-     <div class="element">
-    <h2>&lt;figure&gt;</h2>
-    <div class="element-header">
-        <figure>
-            <img src="paisatge.jpg" alt="Paisatge de muntanya amb un llac al davant" width="300" height="200">
-            <figcaption>Vista panoràmica d’un llac de muntanya al capvespre.</figcaption>
-        </figure>
+    <div class="element">
+        <h2>Etiqueta &lt;figure&gt;</h2>
+        <!-- figure imatge -->
+        <div class="borde">
+            <h2>Bloc de figures:&lt;figure&gt; amb dues imatges</h2>
+            <div class="element-header">
+                <figure>
+                    <img src="img/paisatge.jpg" alt="Llac envoltat de muntanyes a l’estiu" width="300" height="200">
+                    <img src="img/paisatge-llac.jpg" alt="Llac envoltat de muntanyes" width="300" height="200">
+                    <figcaption>Aci tenim diverses imatges sobre paisatges</figcaption>
+                </figure>
 
-        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-            aria-controls="info-modal"
-            data-info="L’accessibilitat es garanteix perquè <strong>&ltfigure&gt</strong> agrupa el contingut visual amb la seua descripció mitjançant <strong>&ltfigcaption&gt</strong>. Això crea una associació semàntica que els lectors de pantalla anuncien com una unitat, mantenint el context entre la imatge i la seua explicació.">
-            ℹ️
-        </button>
-    </div>
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal" data-info="L'etiqueta <strong>&ltimg&gt</strong> té un atribut <strong>alt</strong> descriptiu individual, mentre que <strong>&ltfigcaption&gt</strong> ofereix un context global per al conjunt dins de <strong>&ltfigure&gt</strong>.<br>
+                 Els lectors de pantalla anuncien cada imatge amb el seu 'alt' i després la llegenda com una unitat.">
+                    ℹ️
+                </button>
+            </div>
 
-    <details class="codi">
-        <summary>Codi del &lt;figure&gt;</summary>
-        <button class="copy-btn">Copia codi</button>
-        <pre><code>
+            <details class="codi">
+                <summary>Codi del &lt;figure&gt; amb dues imatges</summary>
+                <button class="copy-btn">Copia codi</button>
+                <pre><code>
 &lt;figure&gt;
-    &lt;img src="paisatge.jpg" alt="Paisatge de muntanya amb un llac al davant" width="300" height="200"&gt;
-    &lt;figcaption&gt;Vista panoràmica d’un llac de muntanya al capvespre.&lt;/figcaption&gt;
+    &lt;img src="paisatge-estiu.jpg" alt="Llac envoltat de muntanyes a l’estiu" width="300" height="200"&gt;
+    &lt;img src="paisatge-hivern.jpg" alt="Llac envoltat de muntanyes a l’hivern" width="300" height="200"&gt;
+    &lt;figcaption&gt;Comparació del llac en dues estacions: estiu i hivern, mostrant el canvi de paisatge.&lt;/figcaption&gt;
 &lt;/figure&gt;
         </code></pre>
-    </details>
-</div>
+            </details>
+        </div>
 
-     <!-- fi de figure -->
-      <!-- figure2 -->
-       <div class="element">
-    <h2>&lt;figure&gt; amb codi font</h2>
-    <div class="element-header">
-        <figure>
-            <pre><code>console.log('Hola món');</code></pre>
-            <figcaption>Exemple bàsic en JavaScript que mostra un missatge a la consola.</figcaption>
-        </figure>
 
-        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-            aria-controls="info-modal"
-            data-info="L’accessibilitat es garanteix perquè <strong>&ltfigure&gt</strong> agrupa el contingut (en aquest cas, codi) amb la seua descripció mitjançant <strong>&ltfigcaption&gt</strong>. Això permet que els lectors de pantalla anuncien la llegenda junt amb el codi, proporcionant context addicional.">
-            ℹ️
-        </button>
-    </div>
+        <!-- fi de figure imatge-->
+        <!-- figure codi -->
+        <div class="borde">
+            <h2>Bloc de figures::&lt;figure&gt; amb codi font</h2>
+            <div class="element-header">
+                <figure>
+                    <pre><code>console.log('Hola món');</code></pre>
+                    <figcaption>Exemple bàsic en JavaScript que mostra un missatge a la consola.</figcaption>
+                </figure>
 
-    <details class="codi">
-        <summary>Codi del &lt;figure&gt; amb codi font</summary>
-        <button class="copy-btn">Copia codi</button>
-        <pre><code>
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal"
+                    data-info="L'etiqueta <strong>&ltfigure&gt</strong> agrupa el contingut (en aquest cas, codi) amb la seua descripció mitjançant <strong>&ltfigcaption&gt</strong>.<br>
+             Això permet que els lectors de pantalla anuncien la llegenda junt amb el codi, proporcionant context addicional.">
+                    ℹ️
+                </button>
+            </div>
+
+            <details class="codi">
+                <summary>Codi del &lt;figure&gt; amb codi font</summary>
+                <button class="copy-btn">Copia codi</button>
+                <pre><code>
 &lt;figure&gt;
     &lt;pre&gt;&lt;code&gt;console.log('Hola món');&lt;/code&gt;&lt;/pre&gt;
     &lt;figcaption&gt;Exemple bàsic en JavaScript que mostra un missatge a la consola.&lt;/figcaption&gt;
 &lt;/figure&gt;
         </code></pre>
-    </details>
-</div>
+            </details>
+        </div>
 
-       <!-- fi de figure2 -->
-    <!-- figCaption -->
-    <!-- audio -->
-    <!-- video -->
-    <!-- track -->
+        <!-- fi de figurecodi-->
+    </div>
+    <!-- fi de figure -->
+    
+    
     <!-- role presentation -->
 
     <div class="element footer">

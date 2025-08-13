@@ -10,30 +10,9 @@
 <body>
     <div class="element header">
         <header>
-
-            <div class="element-header">
-                <h1>Guia interactiva d’elements HTML accessibles</h1>
-                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                    aria-controls="info-modal"
-                    data-info="Aquesta capçalera no utilitza ningún element esècial d'accessibilitat mes enllà del correcte ús de l'html.">
-                    ℹ️
-                </button>
-            </div>
-
-            <details class="codi">
-                <summary>Codi del header</summary>
-                <br>
-                <button class="copy-btn">Copia codi</button>
-                <br>
-                &lt;header&gt;
-                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
-                &lt;/header&gt;
-
-            </details>
+            <h1>Guia interactiva d’elements HTML accessibles</h1>
         </header>
-
     </div>
-
 
 
 
@@ -45,7 +24,7 @@
                 <ul>
                     <li><a href="index.html">Inici</a></li>
                     <li><a href="estructura.html">Estructures bàsiques</a></li>
-                    <li><a href="formularis.html">Formularis i interacció</a></li>
+                    <li><a href="formularis.html" style="background-color: #a9bef7;">Formularis i interacció</a></li>
                     <li><a href="taules.html">Taules</a></li>
                     <li><a href="navegacio.html">Navegació</a></li>
                     <li><a href="multimedia.html">Multimèdia</a></li>
@@ -55,8 +34,8 @@
             </nav>
         </div>
         <!-- botó -->
-        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-            aria-controls="info-modal"
+        <button type="button" type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+            aria-haspopup="dialog" aria-controls="info-modal"
             data-info="Aquest menú utilitza la etiqueta <nav> amb aria-label per a definir el seu propòsit, i els enllaços tenen estructura jeràrquica adequada.">
             ℹ️
         </button>
@@ -64,7 +43,7 @@
         <details class="codi">
             <summary>Codi del menú</summary>
             <br>
-            <button class="copy-btn">Copia codi</button>
+            <button type="button" type="button" class="copy-btn">Copia codi</button>
             &lt;div class="element sidebar" role="complementary"&gt;<br>
             &lt;h2 id="titol-menu"&gt;Menú de navegació&lt;/h2&gt;<br>
             &lt;nav aria-labelledby="titol-menu"&gt;<br>
@@ -87,128 +66,376 @@
 
     <!-- form -->
     <div class="element">
-        <h2 style="color: red;"> ->preguntar per a Manuela, pose el titol del que es cada apartat del formulari o no
-            cal?<br> ->Preguntar si preferix que el desplegable isca baix del element o en el lateral
-        </h2>
+        <h2>Formulari base</h2>
+
 
 
 
         <form action="#" method="post" aria-labelledby="form-title" class="formulari">
+            <!-- inici del formulari -->
             <div class="borde">
-
                 <div class="element-header">
-                    <h2 id="form-title">Formulari d'exemple complet</h2>
-
-                    <details class="codi">
-                        <summary>Codi de inici del formulari</summary>
-                        <br>
-                        <button class="copy-btn">Copia codi</button>
-                        <br>
-                        &lt;form action="#" method="post" aria-labelledby="form-title" class="formulari"&gt;<br>
-                        &lt;h2 id="form-title"&gt;Formulari d'exemple complet&lt;/h2&gt;<br>
-                        &lt;/form&gt;<br>
-                    </details>
-                    <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                        aria-controls="info-modal"
-                        data-info="L'atribut aria-labelledby=form-title fa que els lectord de pantalla llisquen el h2 com al titol del formulari">
+                    <h2 id="form-title">Creació del formulari</h2>
+                    <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                        aria-haspopup="dialog" aria-controls="info-modal"
+                        data-info="L’accessibilitat es reforça perquè el <strong>aria-labelledby</strong> de <strong>&ltform&gt</strong> referencia l’<strong>id</strong> del títol (<strong>form-title</strong>). Això fa que els lectors de pantalla anuncien el nom del formulari abans del seu contingut. El títol està en una etiqueta semàntica <strong>&lth2&gt</strong> i l’<strong>id</strong> és únic i existent. S’evita <strong>aria-label</strong> innecessari perquè ja hi ha un títol visible.">
                         ℹ️
                     </button>
-                </div>
-            </div>
-
-
-            <div class="borde">
-
-                <div class="element-header">
-                    <h2 id="form-title">Formulari d'exemple complet</h2>
-                    <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                        aria-controls="info-modal"
-                        data-info="L'atribut aria-labelledby=form-title fa que els lectord de pantalla llisquen el h2 com al titol del formulari">
-                        ℹ️
-                    </button>
-
                 </div>
 
                 <details class="codi">
                     <summary>Codi de inici del formulari</summary>
                     <br>
-                    <button class="copy-btn">Copia codi</button>
+                    <button type="button" class="copy-btn">Copia codi</button>
                     <br>
-                    &lt;form action="#" method="post" aria-labelledby="form-title" class="formulari"&gt;<br>
-                    &lt;h2 id="form-title"&gt;Formulari d'exemple complet&lt;/h2&gt;<br>
+                    &lt;form action=&quot;#&quot; method=&quot;post&quot; aria-labelledby=&quot;form-title&quot;
+                    class=&quot;formulari&quot;&gt;<br>
+                    &nbsp;&nbsp;&lt;h2 id=&quot;form-title&quot;&gt;Formulari d'exemple complet&lt;/h2&gt;<br>
                     &lt;/form&gt;<br>
                 </details>
-
-
             </div>
 
+            <!-- fi de inici del formulari -->
+
+            <!--  inputs -->
+            <!-- <div class="borde">
+
+    <h2>Introducció de text bàsica: &lt;input&gt;</h2>
+    <br>
+    <div class="element-header">
+
+        <div class="camp-formulari">
+            <label for="nom">Nom:</label><br>
+            <input type="text" id="nom" name="nom" required autocomplete="given-name">
+        </div>
+
+        <button type="button" class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+            aria-controls="info-modal"
+            data-info="L’accessibilitat es reforça perquè cada <strong>&ltlabel&gt</strong> està associada al seu <strong>&ltinput&gt</strong> mitjançant <strong>for</strong> → <strong>id</strong>, fet que permet anunciar clarament el propòsit del camp. Els camps usen <strong>required</strong> natiu, que és detectat i anunciat pels lectors de pantalla sense JavaScript addicional. A més, s’aplica <strong>autocomplete</strong> adequat (per ex., <strong>given-name</strong>, <strong>family-name</strong>), la qual cosa ajuda tant a l’autocompleció com a usuaris amb tecnologies d’assistència. Quan cal context extra, s’utilitza <strong>&ltaria-describedby&gt</strong> per a vincular un text d’ajuda al camp.">
+            ℹ️
+        </button>
+    </div>
+
+    <div class="camp-formulari">
+        <label for="cognom">Cognom:</label><br>
+        <input type="text" id="cognom" name="cognom" required autocomplete="family-name">
+    </div>
+
+    <div class="camp-formulari">
+        <label for="email">Correu electrònic:</label><br>
+        <input type="email" id="email" name="email" required aria-describedby="email-help" autocomplete="email">
+        <br><small id="email-help">No compartirem el teu correu amb ningú.</small>
+    </div>
+
+    <details class="codi">
+        <summary>Codi dels &lt;input&gt;</summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;div class="camp-formulari"&gt;
+    &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="nom" name="nom" required autocomplete="given-name"&gt;
+&lt;/div&gt;
+
+&lt;div class="camp-formulari"&gt;
+    &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="cognom" name="cognom" required autocomplete="family-name"&gt;
+&lt;/div&gt;
+
+&lt;div class="camp-formulari"&gt;
+    &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="email" id="email" name="email" required aria-describedby="email-help" autocomplete="email"&gt;
+    &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;
+&lt;/div&gt;
+        </code></pre>
+    </details>
+            </div> -->
+
+            <!--  fi del inputs -->
+
+            <!-- inputs amb validació en viu -->
             <div class="borde">
+
+                <h2>Introducció de text bàsica: &lt;input&gt; amb errors accessibles</h2>
+                <br>
                 <div class="element-header">
 
                     <div class="camp-formulari">
                         <label for="nom">Nom:</label><br>
-                        <input type="text" id="nom" name="nom" required>
+                        <input type="text" id="nom" name="nom" required autocomplete="given-name"
+                            aria-describedby="nom-error">
+                        <span id="nom-error" class="error" aria-live="polite" style="display:none; color:red;">El nom és
+                            obligatori.</span>
                     </div>
-                    <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                        aria-controls="info-modal"
-                        data-info="Cada camp <strong>&ltinput&gt </strong> té una etiqueta <strong>&ltlabel&gt</strong> associada mitjançant l’atribut for, que coincideix amb l’id del camp.
-                        d'aquesta manera lectors de pantalla anuncien clarament el propòsit del camp. <br> <br> 
-                        L'ús del l'atribut <strong>required</strong> fa que els lectors de pantalla informen al usuari que aquest camp es obligatori, cosa que no pasaria si es fera obligatori mitjancant codi. <br><br>
-                        L'us de l'atribut <strong> &ltaria-describedby&gt </strong> Aquest atribut fa que els lectors de pantalla anuncien el text del <strong>&ltsmall&gt</strong> junt al el camp, oferint informació contextual al usuari.">
+
+                    <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                        aria-haspopup="dialog" aria-controls="info-modal"
+                        data-info="Cada <strong>&ltinput&gt</strong> està vinculat a la seua <strong>&ltlabel&gt</strong> amb <strong>for</strong> i <strong>id</strong> coincidents. Els atributs <strong>required</strong> i <strong>autocomplete</strong> milloren l’experiència amb lectors de pantalla i navegadors. Quan hi ha errors, <strong>aria-invalid</strong> indica l’estat invàlid i <strong>aria-live</strong> amb valor <em>polite</em> permet anunciar el missatge d’error automàticament. Això evita dependència exclusiva de missatges visuals.">
                         ℹ️
                     </button>
                 </div>
 
                 <div class="camp-formulari">
                     <label for="cognom">Cognom:</label><br>
-                    <input type="text" id="cognom" name="cognom" required>
+                    <input type="text" id="cognom" name="cognom" required autocomplete="family-name"
+                        aria-describedby="cognom-error">
+                    <span id="cognom-error" class="error" aria-live="polite" style="display:none; color:red;">El cognom
+                        és obligatori.</span>
                 </div>
 
                 <div class="camp-formulari">
                     <label for="email">Correu electrònic:</label><br>
-                    <input type="email" id="email" name="email" required aria-describedby="email-help">
+                    <input type="email" id="email" name="email" required aria-describedby="email-help email-error"
+                        autocomplete="email">
                     <br><small id="email-help">No compartirem el teu correu amb ningú.</small>
+                    <span id="email-error" class="error" aria-live="polite" style="display:none; color:red;">Introdueix
+                        un correu vàlid.</span>
                 </div>
 
-                <details class="codi">
-                    <summary>Codi dels imputs</summary>
-                    <br>
-                    <button class="copy-btn">Copia codi</button>
-                    <br>
+                <!-- <button type="button" type="submit" onclick="validarFormulari()">Enviar</button> -->
 
-                    &lt;div class="camp-formulari"&gt;<br>
-                    &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;<br>
-                    &lt;input type="text" id="nom" name="nom" required&gt;<br>
-                    &lt;/div&gt;<br>
-                    <br>
-                    &lt;div class="camp-formulari"&gt;<br>
-                    &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;<br>
-                    &lt;input type="text" id="cognom" name="cognom" required&gt;<br>
-                    &lt;/div&gt;<br>
-                    <br>
-                    &lt;div class="camp-formulari"&gt;<br>
-                    &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;<br>
-                    &lt;input type="email" id="email" name="email" required aria-describedby="email-help"&gt;<br>
-                    &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;<br>
-                    &lt;/div&gt;<br>
-                    <br>
+                <details class="codi">
+                    <summary>Codi dels &lt;input&gt; amb errors accessibles</summary>
+                    <button type="button" class="copy-btn">Copia codi</button>
+                    <pre><code>
+                &lt;div class="camp-formulari"&gt;
+                    &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;
+                    &lt;input type="text" id="nom" name="nom" required autocomplete="given-name" aria-describedby="nom-error"&gt;
+                    &lt;span id="nom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El nom és obligatori.&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;div class="camp-formulari"&gt;
+                    &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;
+                    &lt;input type="text" id="cognom" name="cognom" required autocomplete="family-name" aria-describedby="cognom-error"&gt;
+                    &lt;span id="cognom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El cognom és obligatori.&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;div class="camp-formulari"&gt;
+                    &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;
+                    &lt;input type="email" id="email" name="email" required aria-describedby="email-help email-error" autocomplete="email"&gt;
+                    &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;
+                    &lt;span id="email-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;Introdueix un correu vàlid.&lt;/span&gt;
+                &lt;/div&gt;
+
+                <!-- &lt;button type="button" type="submit" onclick="validarFormulari()"&gt;Enviar&lt;/button&gt; -->
+                    &lt;script&gt;
+                            function validarFormulari() {
+                            const camps = [
+                            { id: 'nom', missatge: 'nom-error' },
+                            { id: 'cognom', missatge: 'cognom-error' },
+                            { id: 'email', missatge: 'email-error' }
+                            ];
+
+                            camps.forEach(camp => {
+                            const input = document.getElementById(camp.id);
+                            const error = document.getElementById(camp.missatge);
+
+                            if (!input.checkValidity()) {
+                            error.style.display = 'inline';
+                            input.setAttribute('aria-invalid', 'true');
+                            } else {
+                            error.style.display = 'none';
+                            input.removeAttribute('aria-invalid');
+                            }
+                            });
+                            }
+                            &lt;/script&gt;
+        </code></pre>
                 </details>
             </div>
 
+
+            <!-- fi dels inputs amb validació en viu  -->
+             <!-- inputs avançats -->
+              <div class="borde">
+    <h2>Exemples de tipus d'&lt;input&gt; avançats</h2>
+
+    <!-- Input type="date" -->
+    <div class="camp-formulari">
+        <div class="element-header">
+            <label for="data-naixement">Data de naixement:</label>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="L'etiqueta <strong>&ltlabel&gt</strong> vinculada al <strong>&ltinput type='date'&gt</strong> permet que el lector de pantalla anuncie clarament la funció del camp 
+                <br>Es recomana indicar el format esperat i, si cal, limitar el rang amb <strong>min</strong> i <strong>max</strong> per ajudar la navegació">
+                ℹ️
+            </button>
+        </div>
+        <input type="date" id="data-naixement" name="data-naixement" min="1900-01-01" max="2025-12-31">
+    </div>
+
+    <!-- Input type="time" -->
+    <div class="camp-formulari">
+        <div class="element-header">
+            <label for="hora-cita">Hora de la cita:</label>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="L'etiqueta <strong>&ltlabel&gt</strong> vinculada al <strong>&ltinput type='time'&gt</strong> ajuda als lectors de pantalla a identificar que es tracta d'una selecció d'hora 
+                <br>Es pot utilitzar <strong>step</strong> per definir intervals concrets">
+                ℹ️
+            </button>
+        </div>
+        <input type="time" id="hora-cita" name="hora-cita" step="900">
+    </div>
+
+    <!-- Input type="number" -->
+    <div class="camp-formulari">
+        <div class="element-header">
+            <label for="quantitat">Quantitat:</label>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="El <strong>&ltinput type='number'&gt</strong> permet introduir valors numèrics amb teclat o controls incrementals 
+                <br>L'ús de <strong>min</strong>, <strong>max</strong> i <strong>step</strong> ajuda a evitar errors i facilita la navegació">
+                ℹ️
+            </button>
+        </div>
+        <input type="number" id="quantitat" name="quantitat" min="1" max="10" step="1">
+    </div>
+
+    <!-- Input type="color" -->
+    <div class="camp-formulari">
+        <div class="element-header">
+            <label for="color-preferit">Color preferit:</label>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="El <strong>&ltinput type='color'&gt</strong> obri un selector visual de color 
+                <br>Per a usuaris amb discapacitat visual cal oferir també una descripció textual del color seleccionat">
+                ℹ️
+            </button>
+        </div>
+        <input type="color" id="color-preferit" name="color-preferit" value="#0000ff">
+    </div>
+
+    <!-- Input type="file" -->
+    <div class="camp-formulari">
+        <div class="element-header">
+            <label for="fitxer">Puja un fitxer:</label>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="El <strong>&ltinput type='file'&gt</strong> permet seleccionar arxius 
+                <br>Es pot utilitzar l'atribut <strong>accept</strong> per restringir formats 
+                <br>És recomanable indicar clarament el tipus de fitxer esperat per millorar l'accessibilitat">
+                ℹ️
+            </button>
+        </div>
+        <input type="file" id="fitxer" name="fitxer" accept=".pdf,.docx,image/*">
+    </div>
+
+    <details class="codi">
+        <summary>Codi dels inputs avançats</summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;input type="date" id="data-naixement" name="data-naixement" min="1900-01-01" max="2025-12-31"&gt;
+&lt;input type="time" id="hora-cita" name="hora-cita" step="900"&gt;
+&lt;input type="number" id="quantitat" name="quantitat" min="1" max="10" step="1"&gt;
+&lt;input type="color" id="color-preferit" name="color-preferit" value="#0000ff"&gt;
+&lt;input type="file" id="fitxer" name="fitxer" accept=".pdf,.docx,image/*"&gt;
+        </code></pre>
+    </details>
+</div>
+
+              <!-- fi del inputs avançats -->
+               <!-- inputs avançats 2 -->
+                <div class="borde">
+    <h2>Camp de contrasenya amb validació dinàmica</h2>
+
+    <div class="camp-formulari">
+        <div class="element-header">
+            <label for="pwd">Contrasenya:</label>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="Aquest camp utilitza <strong>&ltaria-live&gt</strong> i <strong>role='status'</strong> per anunciar canvis de validació en temps real sense moure el focus 
+                <br>Quan el contingut no és vàlid s'afegeix <strong>aria-invalid='true'</strong> per indicar-ho als lectors de pantalla 
+                <br>Els missatges d’ajuda i error estan vinculats amb <strong>aria-describedby</strong> i <strong>aria-errormessage</strong> perquè siguen llegits junt amb el camp">
+                ℹ️
+            </button>
+        </div>
+
+        <input type="password" id="pwd" name="pwd" aria-describedby="pwd-help pwd-msg" minlength="8" required>
+        <small id="pwd-help">Mínim 8 caràcters amb almenys una xifra</small>
+        <p id="pwd-msg" role="status" aria-live="polite" style="margin:.25rem 0 0;"></p>
+
+        <script>
+            (function () {
+                const pwd = document.getElementById('pwd');
+                const msg = document.getElementById('pwd-msg');
+                const reNum = /\d/;
+
+                function update() {
+                    const v = pwd.value || '';
+                    let text = '';
+                    let invalid = false;
+
+                    if (v.length && v.length < 8) { 
+                        text = 'La contrasenya és massa curta'; 
+                        invalid = true; 
+                    }
+                    else if (v.length >= 8 && !reNum.test(v)) { 
+                        text = 'Afig almenys una xifra'; 
+                        invalid = true; 
+                    }
+                    else if (v.length >= 8 && reNum.test(v)) { 
+                        text = 'Contrasenya amb requisits mínims complits'; 
+                    }
+
+                    msg.textContent = text;
+                    if (invalid) pwd.setAttribute('aria-invalid','true');
+                    else pwd.removeAttribute('aria-invalid');
+                }
+
+                pwd.addEventListener('input', update);
+            })();
+        </script>
+    </div>
+
+    <details class="codi">
+        <summary>Codi del camp de contrasenya</summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;label for="pwd"&gt;Contrasenya:&lt;/label&gt;
+&lt;input type="password" id="pwd" name="pwd" aria-describedby="pwd-help pwd-msg" minlength="8" required&gt;
+&lt;small id="pwd-help"&gt;Mínim 8 caràcters amb almenys una xifra&lt;/small&gt;
+&lt;p id="pwd-msg" role="status" aria-live="polite"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+(function () {
+  const pwd = document.getElementById('pwd');
+  const msg = document.getElementById('pwd-msg');
+  const reNum = /\d/;
+  function update() {
+    const v = pwd.value || '';
+    let text = ''; let invalid = false;
+    if (v.length && v.length &lt; 8) { text = 'La contrasenya és massa curta'; invalid = true; }
+    else if (v.length &gt;= 8 && !reNum.test(v)) { text = 'Afig almenys una xifra'; invalid = true; }
+    else if (v.length &gt;= 8 && reNum.test(v)) { text = 'Contrasenya amb requisits mínims complits'; }
+    msg.textContent = text;
+    if (invalid) pwd.setAttribute('aria-invalid','true');
+    else pwd.removeAttribute('aria-invalid');
+  }
+  pwd.addEventListener('input', update);
+})();
+&lt;/script&gt;
+        </code></pre>
+    </details>
+</div>
+
+                <!-- fi inputs avançats 2 -->
+
+            <!-- fieldset -->
             <div class="borde">
+                <h2>Caixa d'elements i botó radial: &lt;fieldset&gt; i &lt;input type="radio"&gt;</h2><br>
                 <fieldset class="camp-formulari">
                     <div class="element-header">
                         <legend>Preferències de contacte:</legend>
 
-                        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                            aria-controls="info-modal" data-info="La inclusió del fieldset es important quan temin agrupacions d'aquest estil ja que dona context de que es tracta d'un mateix bloc. <br>
-                             L'etiqueta <strong>&ltlegend&gt</strong> és el primer que llig el lector de pantalla. <br>
-                             Cada  <strong>&ltinput&gt</strong> es llig amb la informació del <strong>&ltlegend&gt</strong> com a prefix, facilitant així la comprensió del camp <br>
-                             En aquest cas el lector llig: <br>
-                             Preferències de contacte, Email, botó d’opció, no seleccionat.<br>">
+                        <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                            aria-haspopup="dialog" aria-controls="info-modal" data-info="L’ús de <strong>&ltfieldset&gt</strong> és fonamental quan agrupem camps relacionats, ja que dona context semàntic i permet que els lectors de pantalla anuncien la relació entre ells. 
+                <br>La inclusió de <strong>&ltlegend&gt</strong> proporciona un títol al grup: és el primer que llig el lector de pantalla abans de cada opció. 
+                <br>En botons d’opció (<strong>&ltinput type='radio'&gt</strong>), el nom del <strong>&ltlegend&gt</strong> s’utilitza com a prefix quan s’anuncia cada element, ajudant l’usuari a entendre el context sense llegir tot el formulari. 
+                <br>Per exemple: «Preferències de contacte, Per correu electrònic, botó d’opció, no seleccionat».">
                             ℹ️
                         </button>
                     </div>
+
                     <div>
                         <input type="radio" id="email-contacte" name="contacte" value="email">
                         <label for="email-contacte">Per correu electrònic</label>
@@ -218,79 +445,77 @@
                         <label for="telefon-contacte">Per telèfon</label>
                     </div>
                 </fieldset>
+
                 <details class="codi">
-                    <summary>Codi del fieldset </summary>
-                    <br>
-                    <button class="copy-btn">Copia codi</button>
-                    <br>
-                    <br>
-                    &lt;fieldset class="camp-formulari"&gt;<br>
-                    &lt;legend&gt;Preferències de contacte:&lt;/legend&gt;<br>
-                    &lt;div&gt;<br>
-                    &lt;input type="radio" id="email-contacte" name="contacte" value="email"&gt;<br>
-                    &lt;label for="email-contacte"&gt;Per correu electrònic&lt;/label&gt;<br>
-                    &lt;/div&gt;<br>
-                    &lt;div&gt;<br>
-                    &lt;input type="radio" id="telefon-contacte" name="contacte" value="telefon"&gt;<br>
-                    &lt;label for="telefon-contacte"&gt;Per telèfon&lt;/label&gt;<br>
-                    &lt;/div&gt;<br>
-                    &lt;/fieldset&gt;<br>
-                    <br>
-
+                    <summary>Codi del &lt;fieldset&gt;</summary>
+                    <button type="button" class="copy-btn">Copia codi</button>
+                    <pre><code>
+&lt;fieldset class="camp-formulari"&gt;
+    &lt;legend&gt;Preferències de contacte:&lt;/legend&gt;
+    &lt;div&gt;
+        &lt;input type="radio" id="email-contacte" name="contacte" value="email"&gt;
+        &lt;label for="email-contacte"&gt;Per correu electrònic&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="radio" id="telefon-contacte" name="contacte" value="telefon"&gt;
+        &lt;label for="telefon-contacte"&gt;Per telèfon&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+        </code></pre>
                 </details>
-
             </div>
 
 
+            <!-- fi del fieldset -->
+
+            <!-- ckeckbox -->
             <div class="borde">
+                <h2>Caixa de selecció: &lt;input type="checkbox"&gt;</h2><br>
                 <div class="camp-formulari">
                     <div class="element-header">
                         <input type="checkbox" id="condicions" name="condicions" required
                             aria-describedby="condicions-desc">
-                        <label for="condicions-desc">Accepte les condicions d'ús</label>
+                        <label for="condicions">Accepte les condicions d'ús</label>
                         <small id="condicions-desc" hidden>Aquest camp és obligatori per continuar.</small>
-                        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                            aria-controls="info-modal"
-                            data-info="Aquest camp utilitza una etiqueta <label> vinculada al checkbox mitjançant l’atribut for, cosa que permet als lectors de
-                                       pantalla anunciar clarament l’etiqueta del control. També incorpora l’atribut required, indicant que és obligatori. <br>
-                                        el camp checkbox es seleccionable i activable mitjancant teclat <br>
-                                         L'us de l'atribut <strong> &ltaria-describedby&gt </strong> Aquest atribut fa que els lectors de pantalla anuncien el text del <strong>&ltsmall&gt</strong> junt al el camp, oferint informació contextual al usuari.">
+
+                        <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                            aria-haspopup="dialog" aria-controls="info-modal"
+                            data-info="El control <strong>&ltinput type='checkbox'&gt</strong> és focusable i activable tant amb ratolí com amb teclat. 
+                <br>Està associat a una etiqueta <strong>&ltlabel&gt</strong> mitjançant l’atribut <strong>for</strong>, cosa que permet als lectors de pantalla anunciar clarament la seva funció. 
+                <br>L’atribut <strong>required</strong> indica que el camp és obligatori i fa que el lector de pantalla ho comuniqui a l’usuari. 
+                <br>L’atribut <strong>aria-describedby</strong> associa el text addicional del <strong>&ltsmall&gt</strong> al camp, de manera que el lector de pantalla anuncia aquesta informació contextual després de llegir l’etiqueta.">
                             ℹ️
                         </button>
-
                     </div>
                 </div>
 
                 <details class="codi">
-                    <summary>Codi del checkbox</summary>
-                    <br>
-                    <button class="copy-btn">Copia codi</button>
-                    <br>
-                    &lt;div class="camp-formulari"&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" id="condicions" name="condicions" required
-                    aria-describedby="condicions-desc&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="condicions"&gt;Accepte les condicions d'ús&lt;/label&gt;<br>
-                    &lt;br&gt;&lt;small id="email-help" hidden&gt;Aquest camp és obligatori per
-                    continuar.&lt;/small&gt;<br>
-
-                    &lt;/div&gt;<br>
-                    <br>
+                    <summary>Codi del &lt;checkbox&gt;</summary>
+                    <button type="button" class="copy-btn">Copia codi</button>
+                    <pre><code>
+&lt;div class="camp-formulari"&gt;
+    &lt;input type="checkbox" id="condicions" name="condicions" required aria-describedby="condicions-desc"&gt;
+    &lt;label for="condicions"&gt;Accepte les condicions d'ús&lt;/label&gt;
+    &lt;small id="condicions-desc" hidden&gt;Aquest camp és obligatori per continuar.&lt;/small&gt;
+&lt;/div&gt;
+        </code></pre>
                 </details>
             </div>
 
+            <!-- fi del checkbox -->
 
-
+            <!-- select -->
             <div class="borde">
+                <h2>Selecció d'elements: &lt;select&gt;</h2>
                 <div class="camp-formulari">
                     <div class="element-header">
                         <label for="pais">Selecciona el teu país:</label><br>
-                        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                            aria-controls="info-modal"
-                            data-info="Etiqueta <strong>&ltlabel&gt</strong> amb <strong>for='pais'</strong>: relaciona explícitament el text “Selecciona el teu país” amb el desplegable, 
-                            de manera que els lectors de pantalla anuncien correctament la funció del control. <br>
-                            <strong>id='pais'</strong>: al <strong>&ltselect&gt</strong>: necessari per vincular-se amb el label i permetre la navegació i identificació semàntica del control.<br>
-                            La primera opció amb el valor buit (<option value=''>): funciona com a marcador o instrucció inicial.<br>
-                            És una pràctica útil perque evita seleccions per defecte que podrien passar desapercebudes a usuaris amb dificultats visuals o inclús motores.">
+                        <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                            aria-haspopup="dialog" aria-controls="info-modal"
+                            data-info="L'etiqueta <strong>&ltlabel&gt</strong> amb <strong>for='pais'</strong> vincula el text “Selecciona el teu país” amb el desplegable 
+                <br>El <strong>id='pais'</strong> al <strong>&ltselect&gt</strong> és necessari per establir aquesta relació i permetre que el lector de pantalla identifique correctament el control 
+                <br>La primera opció amb <strong>value=''</strong> funciona com a marcador o instrucció inicial i evita seleccions predeterminades no desitjades 
+                <br>Aquesta pràctica millora l’accessibilitat per a persones amb discapacitat visual o dificultats motores">
                             ℹ️
                         </button>
                     </div>
@@ -301,97 +526,98 @@
                         <option value="alemanya">Alemanya</option>
                     </select>
                 </div>
+
                 <details class="codi">
-                    <summary>Codi del selector</summary>
-                    <br>
-                    <button class="copy-btn">Copia codi</button>
-                    <br>
-                    &lt;div class="camp-formulari"&gt;<br>
-                    &lt;label for="pais"&gt;Selecciona el teu país:&lt;/label&gt;&lt;br&gt;<br>
-                    &lt;select id="pais" name="pais" required&gt;<br>
-                    &lt;option value=""&gt;-- Escull un país --&lt;/option&gt;<br>
-                    &lt;option value="espanya"&gt;Espanya&lt;/option&gt;<br>
-                    &lt;option value="frança"&gt;França&lt;/option&gt;<br>
-                    &lt;option value="alemanya"&gt;Alemanya&lt;/option&gt;<br>
-                    &lt;/select&gt;<br>
-                    &lt;/div&gt;<br>
-                    <br>
-
+                    <summary>Codi del &lt;select&gt;</summary>
+                    <button type="button" class="copy-btn">Copia codi</button>
+                    <pre><code>
+                        &lt;div class="camp-formulari"&gt;
+                            &lt;label for="pais"&gt;Selecciona el teu país:&lt;/label&gt;
+                            &lt;select id="pais" name="pais" required&gt;
+                                &lt;option value=""&gt;-- Escull un país --&lt;/option&gt;
+                                &lt;option value="espanya"&gt;Espanya&lt;/option&gt;
+                                &lt;option value="frança"&gt;França&lt;/option&gt;
+                                &lt;option value="alemanya"&gt;Alemanya&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+        </code></pre>
                 </details>
-
             </div>
+
+            <!-- fi del select -->
+
             <!-- Textarea -->
-            <div class="borde">
-                <div class="camp-formulari ">
-                    <div class="element-header">
-                        <label for="missatge">Comentaris o missatge:</label><br>
-                        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                            aria-controls="info-modal"
-                            data-info=" S'utilitza una etiqueta  <strong>&ltlabel&gt</strong> que està vinculada al <strong>&lttextarea&gt</strong>  per garantir
-                             que els usuaris de lectors de pantalla entenguen clarament quin contingut han d’introduir. A més, s’inclou una descripció 
-                             addicional amb l’etiqueta <strong>&ltsmall&gt</strong>  vinculada mitjançant <strong> aria-describedby</strong>,que proporciona context 
-                                addicional sobre la funcionalitat del camp. Això millora la comprensió per part de persones amb discapacitat visual o cognitiva.">
-                            ℹ️
-                        </button>
-                    </div>
-                </div>
-                <textarea id="missatge" name="missatge" rows="4" aria-describedby="ajuda-missatge"></textarea>
-                <small hidden id="ajuda-missatge">Açò és el que llig el lector de pantalla.</small>
-                <details class="codi">
-                    <summary>Desplega el codi</summary>
-
-                    <button class="copy-btn">Copia codi</button>
-                    <br>
-                    &lt;div class="camp-formulari"&gt;<br>
-
-                    &lt;label for="missatge"&gt;Comentaris o missatge:&lt;/label&gt;&lt;br&gt;<br>
-                    &lt;textarea id="missatge" name="missatge" rows="4" &gt;&lt;/textarea&gt;<br>
-                    &lt;/div&gt;<br>
-                    <br>
-
-                </details>
-            </div>
-            <!-- botons d'enviar -->
             <div class="borde">
                 <div class="camp-formulari">
                     <div class="element-header">
-                        <button type="submit" id="send-button">Enviar</button>
+                        <label for="missatge">Comentaris o missatge:</label><br>
+                        <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                            aria-haspopup="dialog" aria-controls="info-modal"
+                            data-info="L'etiqueta <strong>&ltlabel&gt</strong> vinculada al <strong>&lttextarea&gt</strong> permet que els lectors de pantalla anuncien clarament la funció del camp 
+                <br>El <strong>aria-describedby</strong> vincula el camp amb el text del <strong>&ltsmall&gt</strong> oferint informació contextual addicional 
+                <br>Aquesta pràctica millora la comprensió del contingut per a persones amb discapacitat visual o cognitiva">
+                            ℹ️
+                        </button>
+                    </div>
+                </div>
+
+                <textarea id="missatge" name="missatge" rows="4" aria-describedby="ajuda-missatge"></textarea>
+                <small hidden id="ajuda-missatge">Açò és el que llig el lector de pantalla.</small>
+
+                <details class="codi">
+                    <summary>Codi del &lt;textarea&gt;</summary>
+                    <button type="button" class="copy-btn">Copia codi</button>
+                    <pre><code>
+                        &lt;div class="camp-formulari"&gt;
+                            &lt;label for="missatge"&gt;Comentaris o missatge:&lt;/label&gt;
+                            &lt;textarea id="missatge" name="missatge" rows="4" aria-describedby="ajuda-missatge"&gt;&lt;/textarea&gt;
+                            &lt;small hidden id="ajuda-missatge"&gt;Açò és el que llig el lector de pantalla.&lt;/small&gt;
+                        &lt;/div&gt;
+        </code></pre>
+                </details>
+            </div>
+
+            <!-- di del textarea -->
+
+            <!-- botons d'enviar -->
+            <div class="borde">
+                <h2>Botons d'enviament i reinici: &lt;button&gt;</h2>
+
+                <div class="camp-formulari">
+                    <div class="element-header">
+                        <button type="submit" style="margin-right: -60%;">Enviar</button>
                         <button type="reset">Reiniciar</button>
-                        <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
-                            aria-controls="info-modal"
-                            data-info="Els botons amb etiqueta &ltbutton&gt sonper defecte reconeguts pels lectord de pantalla i 
-                            com es posa el <strong>type</strong> correcte el lector el identifica com al que son. <br>
-                            En aquestos casos no cal posar atributs aria ja que el accesible name del botó es el propi text que apareix dins de l'etiqueta i per tant el lector el llig.<br>
-                            En cas que els botons foren una icona enlloc del seu nom, si que caldria posar l'atribut aria-label.">
+                        <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+                            aria-haspopup="dialog" aria-controls="info-modal"
+                            data-info="Els botons <strong>&ltbutton&gt</strong> són reconeguts pels lectors de pantalla amb el seu nom accessible 
+                <br>Si el <strong>type</strong> és correcte el lector els identifica com al que són (enviament, reinici, acció genèrica) 
+                <br>No cal afegir atributs ARIA si el botó té text visible que descriu la seua funció 
+                <br>Si el botó fora només una icona sense text caldria afegir un <strong>aria-label</strong> descriptiu">
                             ℹ️
                         </button>
                     </div>
 
-                    <br>
                     <details class="codi">
                         <summary>Codi dels botons del formulari</summary>
-                        <br>
-                        <button class="copy-btn">Copia codi</button>
-                        <br>
-                        <code>
-                        &lt;div class="camp-formulari"&gt;<br>
-                        &lt;button type="submit"&gt;Enviar&lt;/button&gt;<br>
-                        &lt;button type="reset"&gt;Reiniciar&lt;/button&gt;<br>
-                        &lt;/div&gt;<br>
-                        </code>
-
+                        <button type="button" class="copy-btn">Copia codi</button>
+                        <pre><code>
+                        &lt;div class="camp-formulari"&gt;
+                            &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+                            &lt;button type="reset"&gt;Reiniciar&lt;/button&gt;
+                        &lt;/div&gt;
+            </code></pre>
                     </details>
-
                 </div>
-
             </div>
+
+            <!-- fi del botons d'enviar -->
 
         </form>
 
         <details class="codi">
             <summary>Codi complet de tot el formulari</summary>
             <br>
-            <button class="copy-btn">Copia codi</button>
+            <button type="button" class="copy-btn">Copia codi</button>
             <br>
             &lt;form action="#" method="post" aria-labelledby="form-title" class="formulari"&gt;<br>
             &lt;h2 id="form-title"&gt;Formulari d'exemple complet&lt;/h2&gt;<br>
@@ -446,7 +672,7 @@
             <br>
             &lt;div class="camp-formulari"&gt;<br>
             &lt;button type="submit"&gt;Enviar&lt;/button&gt;<br>
-            &lt;button type="reset"&gt;Reiniciar&lt;/button&gt;<br>
+            &lt;button type="button" type="reset"&gt;Reiniciar&lt;/button&gt;<br>
             &lt;/div&gt;<br>
             &lt;/form&gt;<br>
 
@@ -456,14 +682,54 @@
     <!-- label -->
 
     </div>
-    <!-- input -->
-    <!-- textarea -->
-    <!-- select -->
-    <!-- option -->
-    <!-- fieldset -->
-    <!-- legend -->
-    <!-- button -->
     <!-- datalist -->
+    <div class="element">
+        <h2>Llista de dades: &lt;datalist&gt;</h2>
+        <div class="element-header">
+            <label for="navegador">Tria un navegador:</label>
+            <input list="navegadors" id="navegador" name="navegador" aria-describedby="infoNavegador">
+
+            <datalist id="navegadors">
+                <option value="Google Chrome" label="Chrome — ràpid i de Google">
+                <option value="Mozilla Firefox" label="Firefox — flexible i de codi obert">
+                <option value="Safari" label="Safari — optimitzat per a dispositius Apple">
+                <option value="Microsoft Edge" label="Edge — integració amb Windows">
+                <option value="Opera" label="Opera — amb bloqueig d'anuncis incorporat">
+            </datalist>
+
+            <small id="infoNavegador">Selecciona un navegador o escriu-ne un de diferent.</small>
+
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal" data-info="L’accessibilitat es reforça utilitzant <strong>aria-describedby</strong> per donar context extra al camp, i l’atribut <strong>label</strong> en cada <strong>&ltoption&gt</strong> per a que  el lector de pantalla puga anunciar tant el valor com la descripció breu. <br>
+            Això permet orientar-se dins del datalist amb el lector de veu.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi del &lt;datalist&gt; amb ARIA</summary>
+            <button type="button" class="copy-btn">Copia codi</button>
+            <pre><code>
+&lt;label for="navegador"&gt;Tria un navegador:&lt;/label&gt;
+&lt;input list="navegadors" id="navegador" name="navegador" aria-describedby="infoNavegador"&gt;
+
+&lt;datalist id="navegadors"&gt;
+    &lt;option value="Google Chrome" label="Chrome — ràpid i de Google"&gt;
+    &lt;option value="Mozilla Firefox" label="Firefox — flexible i de codi obert"&gt;
+    &lt;option value="Safari" label="Safari — optimitzat per a dispositius Apple"&gt;
+    &lt;option value="Microsoft Edge" label="Edge — integració amb Windows"&gt;
+    &lt;option value="Opera" label="Opera — amb bloqueig d'anuncis incorporat"&gt;
+&lt;/datalist&gt;
+
+&lt;small id="infoNavegador"&gt;Selecciona un navegador o escriu-ne un de diferent.&lt;/small&gt;
+        </code></pre>
+        </details>
+    </div>
+
+    <!-- fi de datalist -->
+
+
+
     </div>
     <div class="element footer">
         <h2> Footer</h2>
@@ -474,7 +740,7 @@
         <details class="codi">
             <summary>Codi del Footer</summary>
             <br>
-            <button class="copy-btn">Copia codi</button>
+            <button type="button" class="copy-btn">Copia codi</button>
             <br>
             &lt;footer&gt;
             &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
@@ -489,7 +755,7 @@
         <div class="modal-content">
             <h3 id="modal-title">Informació d’accessibilitat</h3>
             <p id="modal-text"></p>
-            <button class="close-btn">Tancar</button>
+            <button type="button" class="close-btn">Tancar</button>
         </div>
     </div>
     <script src="script.js"></script>

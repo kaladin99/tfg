@@ -45,14 +45,14 @@ h1 {
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
   flex:none;
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
   
 }
 .element:hover {
   /* transform: scale(1.02); */
   background-color: #f0f8ff; 
   cursor: pointer;
-  transform: scale(1.01);
+  /* transform: scale(1.01); */
 }
 .element h2 {
   margin: 0;
@@ -81,8 +81,10 @@ h1 {
 }
 
 .element.sidebar a{
-  color: 12232b;
+  border: 0px solid;
+  border-radius: 10px;
 }
+
 .tooltip {
  display: none;
   position: absolute;
@@ -184,9 +186,9 @@ input[type="text"],
 input[type="email"],
 select,
 textarea {
-  width: 100%;
+  width: 40%;
   padding: 0.5rem;
-  border-radius: 4px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 1rem;
 }
@@ -214,11 +216,11 @@ button:hover {
   margin: 0.7rem;
   border-radius: 10px;
    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-   transition: transform 0.3s ease;
+   /* transition: transform 0.3s ease; */
 }
 .borde:hover{
  background: #daeaf8; 
- transform: scale(1.01);
+ /* transform: scale(1.01); */
 }
 
 input[type="text"],

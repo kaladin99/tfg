@@ -3,23 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>TÍTOL DE LA PÀGINA</title>
+    <title>WAI-ARIA — Guia interactiva d’elements HTML accessibles</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <!-- Capçalera consistent amb la resta de pàgines -->
     <div class="element header">
         <header>
             <h1>Guia interactiva d’elements HTML accessibles</h1>
             <div class="tooltip">
                 &lt;header&gt;
-                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+                &lt;h1&gt; Guia interactiva d’elements HTML accessibles &lt;/h1&gt;
                 &lt;/header&gt;
                 <button class="copy-btn">Copia codi</button>
             </div>
         </header>
-
     </div>
+
+    <!-- Menú lateral -->
     <div class="element sidebar">
         <h2>Menú de navegació</h2>
         <nav aria-label="Menú principal">
@@ -31,20 +33,237 @@
                 <li><a href="navegacio.html">Navegació</a></li>
                 <li><a href="multimedia.html">Multimèdia</a></li>
                 <li><a href="interactius.html">Elements interactius</a></li>
-                <li><a href="aria.html">WAI-ARIA</a></li>
+                <li><a href="aria.html" style="background-color: #a9bef7;">WAI-ARIA</a></li>
             </ul>
         </nav>
     </div>
- <div class="element footer">
-        <h2> Footer</h2>
+    <!-- Fi del menú lateral -->
 
+    <!-- Introducció WAI-ARIA -->
+    <div class="element">
+        <h2>Què és WAI-ARIA i quan convé usar-la</h2>
+        <div class="element-header">
+            <p>
+                <strong>WAI-ARIA</strong> (Accessible Rich Internet Applications) és un conjunt de <em>roles</em>,
+                estats i propietats que complementen l’HTML per comunicar millor la interfície a les tecnologies
+                d’assistència (p. ex. lectors de pantalla). La norma d’or és: <em>primer, HTML natiu</em>; només
+                si no és suficient, afegeix ARIA per descriure <strong>rols</strong>, <strong>estats</strong> i
+                <strong>relacions</strong>.
+            </p>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="WAI-ARIA aporta <strong>roles</strong> (p. ex. <strong>role=&quotdialog&quot</strong>), 
+                <strong>estats/propietats</strong> (p. ex. <strong>aria-expanded</strong>, <strong>aria-pressed</strong>) i 
+                <strong>relacions</strong> (p. ex. <strong>aria-labelledby</strong>, <strong>aria-describedby</strong>). 
+                Preferix sempre elements natius (<strong>&ltbutton&gt</strong>, <strong>&ltnav&gt</strong>, <strong>&ltform&gt</strong>) 
+                i empra ARIA per a casos personalitzats.">
+                ℹ️
+            </button>
+        </div>
+    </div>
+
+    <!-- aria-label -->
+    <div class="element">
+        <h2><code>aria-label</code> — Nom accessible explícit</h2>
+        <div class="element-header">
+            <div>
+                <p>Proporciona un <em>accessible name</em> quan el control no té text visible suficient (p. ex. botó d’icona).</p>
+                <button type="button" aria-label="Obrir menú principal" id="btn-menu-icona">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="Useu <strong>aria-label</strong> quan NO hi haja text visible útil. 
+                Si hi ha text visible, és preferible <strong>aria-labelledby</strong>. 
+                Icònes decoratives: marqueu-les amb <strong>aria-hidden=&quot;true&quot;</strong>.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi de l’exemple (<code>aria-label</code>)</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>&lt;button type=&quot;button&quot; aria-label=&quot;Obrir menú principal&quot;&gt;
+  &lt;span aria-hidden=&quot;true&quot;&gt;☰&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </details>
+    </div>
+
+    <!-- aria-labelledby -->
+    <div class="element">
+        <h2><code>aria-labelledby</code> — Nom referenciat a text visible</h2>
+        <div class="element-header">
+            <div>
+                <span id="txt-menu-principal">Menú principal</span>
+                <button type="button" aria-labelledby="txt-menu-principal btn-menu-ref" id="btn-menu-ref">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="<strong>aria-labelledby</strong> associa el nom accessible a text(s) visible(s). 
+                Preferible a <strong>aria-label</strong> quan hi ha text en pantalla.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi de l’exemple (<code>aria-labelledby</code>)</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>&lt;span id=&quot;txt-menu-principal&quot;&gt;Menú principal&lt;/span&gt;
+&lt;button type=&quot;button&quot; aria-labelledby=&quot;txt-menu-principal btn-menu-ref&quot; id=&quot;btn-menu-ref&quot;&gt;
+  &lt;span aria-hidden=&quot;true&quot;&gt;☰&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </details>
+    </div>
+
+    <!-- aria-describedby -->
+    <div class="element">
+        <h2><code>aria-describedby</code> — Descripció/ajuda complementària</h2>
+        <div class="element-header">
+            <div>
+                <label for="email1">Correu electrònic</label>
+                <small id="ajuda-email1">No compartirem mai el teu correu.</small><br>
+                <input id="email1" name="email1" type="email" aria-describedby="ajuda-email1">
+            </div>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="<strong>aria-describedby</strong> afegeix informació contextual que el lector de pantalla llig després del nom. 
+                Ideal per a instruccions, avisos o errors.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi de l’exemple (<code>aria-describedby</code>)</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>&lt;label for=&quot;email1&quot;&gt;Correu electrònic&lt;/label&gt;
+&lt;small id=&quot;ajuda-email1&quot;&gt;No compartirem mai el teu correu.&lt;/small&gt;
+&lt;input id=&quot;email1&quot; type=&quot;email&quot; aria-describedby=&quot;ajuda-email1&quot;&gt;</code></pre>
+        </details>
+    </div>
+
+    <!-- aria-controls + aria-expanded -->
+    <div class="element">
+        <h2><code>aria-controls</code> i <code>aria-expanded</code> — Mostrar/ocultar contingut</h2>
+        <div class="element-header">
+            <div>
+                <button type="button" aria-controls="faq-aria" aria-expanded="false" id="btn-faq-aria">Mostra resposta</button>
+                <div id="faq-aria" hidden>
+                    <p>Resposta de l’exemple. Aquest bloc es mostra i s’oculta amb el botó.</p>
+                </div>
+            </div>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="<strong>aria-controls</strong> indica què governa el control; 
+                <strong>aria-expanded</strong> reflecteix si el contingut està obert o tancat. 
+                Sincronitza-ho sempre amb l’atribut <strong>hidden</strong> o l’estat visual.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi de l’exemple (<code>aria-controls</code> + <code>aria-expanded</code>)</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>&lt;button type=&quot;button&quot; aria-controls=&quot;faq-aria&quot; aria-expanded=&quot;false&quot; id=&quot;btn-faq-aria&quot;&gt;Mostra resposta&lt;/button&gt;
+&lt;div id=&quot;faq-aria&quot; hidden&gt;
+  &lt;p&gt;Resposta de l’exemple. Aquest bloc es mostra i s’oculta amb el botó.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(function () {
+  const btn = document.getElementById('btn-faq-aria');
+  const panel = document.getElementById('faq-aria');
+  if (btn &amp;&amp; panel) {
+    btn.addEventListener('click', () =&gt; {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      panel.hidden = expanded;
+      btn.textContent = expanded ? 'Mostra resposta' : 'Oculta resposta';
+    });
+  }
+})();
+&lt;/script&gt;</code></pre>
+        </details>
+    </div>
+
+    <!-- aria-live -->
+    <div class="element">
+        <h2><code>aria-live</code> — Anuncis de canvis dinàmics</h2>
+        <div class="element-header">
+            <div>
+                <div aria-live="polite" id="live-polite-aria" style="margin-bottom: .5rem;"></div>
+                <button type="button" id="btn-afegir-aria">Afegir element</button>
+            </div>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="Les &quot;live regions&quot; anuncien canvis sense moure el focus. 
+                <strong>aria-live=&quot;polite&quot;</strong> respecta el flux de lectura; 
+                <strong>assertive</strong> interromp (useu-ho amb molta prudència).">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Codi de l’exemple (<code>aria-live</code>)</summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>&lt;div aria-live=&quot;polite&quot; id=&quot;live-polite-aria&quot;&gt;&lt;/div&gt;
+&lt;button type=&quot;button&quot; id=&quot;btn-afegir-aria&quot;&gt;Afegir element&lt;/button&gt;
+
+&lt;script&gt;
+(function () {
+  const live = document.getElementById('live-polite-aria');
+  const btn = document.getElementById('btn-afegir-aria');
+  let n = 0;
+  if (btn &amp;&amp; live) {
+    btn.addEventListener('click', () =&gt; {
+      n += 1;
+      live.textContent = `S'ha afegit l'element ${n}.`;
+    });
+  }
+})();
+&lt;/script&gt;</code></pre>
+        </details>
+    </div>
+
+    <!-- Altres atributs i bones pràctiques -->
+    <div class="element">
+        <h2>Altres atributs útils i bones pràctiques</h2>
+        <div class="element-header">
+            <ul>
+                <li><strong>aria-current</strong>: marca l’element actual d’una navegació (p. ex. pàgina activa).</li>
+                <li><strong>aria-hidden</strong>: oculta l’element a tecnologia d’assistència (no visualment). No l’apliques a contingut necessari.</li>
+                <li><strong>aria-pressed</strong>: estat d’un botó commutable (toggle).</li>
+                <li><strong>aria-disabled</strong>: indica deshabilitació quan no pots usar <strong>disabled</strong> natiu.</li>
+                <li><strong>role</strong>: sols quan l’element natiu no cobreix el cas (p. ex. <code>role="dialog"</code> en un contenidor personalitzat).</li>
+            </ul>
+
+            <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog" aria-controls="info-modal"
+                data-info="Evita ARIA redundant; preferix HTML natiu. Mantín sincronitzats els estats (p. ex. <strong>aria-expanded</strong> amb <strong>hidden</strong>). 
+                Comprova l’ordre de tabulació i el focus visible.">
+                ℹ️
+            </button>
+        </div>
+
+        <details class="codi">
+            <summary>Exemple ràpid amb <code>aria-current</code></summary>
+            <button class="copy-btn">Copia codi</button>
+            <pre><code>&lt;nav aria-label=&quot;Paginació&quot;&gt;
+  &lt;a href=&quot;?p=1&quot;&gt;1&lt;/a&gt;
+  &lt;a href=&quot;?p=2&quot; aria-current=&quot;page&quot;&gt;2&lt;/a&gt;
+  &lt;a href=&quot;?p=3&quot;&gt;3&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+        </details>
+    </div>
+
+    <!-- Peu de pàgina coherent amb la teua maqueta -->
+    <div class="element footer">
+        <h2>Footer</h2>
         <footer>
             <p>© 2025 Nom de la teua empresa</p>
         </footer>
         <div class="tooltip">
-            &lt;header&gt;
-            &lt;h1&gt;Benvingut&lt;/h1&gt;
-            &lt;/header&gt;
             &lt;footer&gt;
             &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
             &lt;/footer&gt;
@@ -52,8 +271,47 @@
         </div>
     </div>
 
+    <!-- Modal reutilitzable de la pàgina -->
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <h3 id="modal-title">Informació d’accessibilitat</h3>
+            <p id="modal-text"></p>
+            <button class="close-btn">Tancar</button>
+        </div>
+    </div>
 
+    <!-- JS global del teu projecte (gestiona .info-btn, copiar codi, etc.) -->
     <script src="script.js"></script>
+
+    <!-- Petits scripts d’exemple (es poden deixar ací o moure’ls a un fitxer propi) -->
+    <script>
+        // Exemple: toggle aria-expanded + hidden (ja inclòs al bloc de codi per a copiar).
+        (function () {
+            const btn = document.getElementById('btn-faq-aria');
+            const panel = document.getElementById('faq-aria');
+            if (btn && panel) {
+                btn.addEventListener('click', () => {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', String(!expanded));
+                    panel.hidden = expanded;
+                    btn.textContent = expanded ? 'Mostra resposta' : 'Oculta resposta';
+                });
+            }
+        })();
+
+        // Exemple: live region (també duplicat al bloc per a copiar).
+        (function () {
+            const live = document.getElementById('live-polite-aria');
+            const btn = document.getElementById('btn-afegir-aria');
+            let n = 0;
+            if (btn && live) {
+                btn.addEventListener('click', () => {
+                    n += 1;
+                    live.textContent = `S'ha afegit l'element ${n}.`;
+                });
+            }
+        })();
+    </script>
 </body>
 
 </html>

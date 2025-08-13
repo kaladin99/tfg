@@ -11,12 +11,6 @@
     <div class="element header">
         <header>
             <h1>Guia interactiva d’elements HTML accessibles</h1>
-            <div class="tooltip">
-                &lt;header&gt;
-                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
-                &lt;/header&gt;
-                <button class="copy-btn">Copia codi</button>
-            </div>
         </header>
 
     </div>
@@ -25,7 +19,7 @@
         <nav aria-label="Menú principal">
             <ul>
                 <li><a href="index.html">Inici</a></li>
-                <li><a href="estructura.html">Estructures bàsiques</a></li>
+                <li><a href="estructura.html"style="background-color: #a9bef7;">Estructures bàsiques</a></li>
                 <li><a href="formularis.html">Formularis</a></li>
                 <li><a href="taules.html">Taules</a></li>
                 <li><a href="navegacio.html">Navegació</a></li>
@@ -35,13 +29,105 @@
             </ul>
         </nav>
     </div>
+
+    <!-- header -->
+     <div class="element header">
+        
+
+            <div class="element-header">
+                <h2>Capçalera de la pagina web</h2>
+                <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                    aria-controls="info-modal"
+                    data-info="Aquesta capçalera no utilitza ningún element esècial d'accessibilitat mes enllà del correcte ús de l'html.">
+                    ℹ️
+                </button>
+            </div>
+
+            <details class="codi">
+                <summary>Codi del header</summary>
+                <br>
+                <button class="copy-btn">Copia codi</button>
+                <br>
+                <pre><code>
+&lt;header&gt;
+    &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+&lt;/header&gt;
+
+                </code></pre>
+              
+
+            </details>
+        
+
+    </div>
+<!-- fi del header -->
+ <!-- botons -->
+ <div class="element">
+   <h2>Botons accessibles: &lt;button&gt;</h2>
+    <div class="borde">
+    
+
+    <!-- BOTÓ AMB TEXT -->
+    <div class="camp-formulari">
+        <div class="element-header">
+            <button type="button">Enviar formulari</button>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="Els botons amb text dins de &ltbutton&gt tenen un nom accessible automàticament, per tant els lectors de pantalla el reconeixen sense atributs addicionals 
+                <br>És important usar l'atribut <strong>type</strong> correcte (<strong>submit</strong>, <strong>reset</strong> o <strong>button</strong>) per definir el comportament 
+                <br>Si el botó està dins d'un formulari i no és per enviar-lo, cal usar <strong>type='button'</strong> per evitar validacions no desitjades">
+                ℹ️
+            </button>
+        </div>
+    </div>
+    <details class="codi">
+        <summary>Codi dels botons</summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;!-- Botó amb text --&gt;
+&lt;button type="button"&gt;Enviar formulari&lt;/button&gt;
+
+&lt;!-- Botó només amb icona --&gt;
+&lt;button type="button" aria-label="Afegir al carret"&gt;🛒&lt;/button&gt;
+        </code></pre>
+    </details>
+ </div>
+    <!-- BOTÓ NOMÉS AMB ICONA -->
+     <div class="borde">
+    <div class="camp-formulari">
+        <div class="element-header">
+            <button type="button" aria-label="Afegir al carret">
+                🛒
+            </button>
+            <button type="button" class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
+                aria-controls="info-modal"
+                data-info="Quan un botó només mostra una icona i no té text visible, cal afegir un <strong>aria-label</strong> descriptiu 
+                <br>Això dona el nom accessible al control, que és anunciat pel lector de pantalla en lloc del contingut visual 
+                <br>Si es fa servir una icona SVG, també es pot utilitzar <strong>&lttitle&gt</strong> dins de l’SVG, però <strong>aria-label</strong> és més consistent">
+                ℹ️
+            </button>
+        </div>
+    </div>
+
+    <details class="codi">
+        <summary>Codi dels botons</summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;!-- Botó només amb icona --&gt;
+&lt;button type="button" aria-label="Afegir al carret"&gt;🛒&lt;/button&gt;
+        </code></pre>
+    </details>
+</div>
+
+
+ </div>
+ <!--  fi de botons -->
     <!-- tipus de llistes -->
      <div class="element">
         <h2>Tipus de llistes</h2>
     <!-- llista desordenada -->
     <div class="borde">
-        <h2>Llista desordenada: &lt;ul&gt;</ul>
-        </h2>
+        <h3>Llista desordenada: &lt;ul&gt;</ul></h3>
         <div class="element-header">
             <ul>
                 <li>Element de llista 1</li>
@@ -149,6 +235,7 @@
       <!-- Fi de llista de definicions -->
 </div>
      <!-- Fi de tipus de llistes -->
+     
     <!-- section -->
     <!-- Article -->
     <!-- aside -->
