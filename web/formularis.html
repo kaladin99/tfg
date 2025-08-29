@@ -8,17 +8,17 @@
 </head>
 
 <body>
-    <div class="element header">
+    <!-- <div class="element header">
         <header>
             <h1>Guia interactiva d’elements HTML accessibles</h1>
         </header>
-    </div>
+    </div> -->
 
 
 
     <div class="element sidebar">
 
-        <h2>Menú de navegació</h2>
+        <!-- <h2>Menú de navegació</h2> -->
         <div class="element-header">
             <nav aria-label="Menú principal">
                 <ul>
@@ -30,17 +30,18 @@
                     <li><a href="multimedia.html">Multimèdia</a></li>
                     <li><a href="interactius.html">Elements interactius</a></li>
                     <li><a href="aria.html">WAI-ARIA</a></li>
+                    <li><a href="validaco.html">Ferramentes de validació</a></li>
                 </ul>
             </nav>
         </div>
         <!-- botó -->
-        <button type="button" type="button" class="info-btn" aria-label="Informació d’accessibilitat"
+        <!-- <button type="button" type="button" class="info-btn" aria-label="Informació d’accessibilitat"
             aria-haspopup="dialog" aria-controls="info-modal"
             data-info="Aquest menú utilitza la etiqueta <nav> amb aria-label per a definir el seu propòsit, i els enllaços tenen estructura jeràrquica adequada.">
             ℹ️
-        </button>
+        </button> -->
 
-        <details class="codi">
+        <!-- <details class="codi">
             <summary>Codi del menú</summary>
             <br>
             <button type="button" type="button" class="copy-btn">Copia codi</button>
@@ -60,7 +61,7 @@
             &lt;/nav&gt;<br>
             &lt;/div&gt;<br>
 
-        </details>
+        </details> -->
     </div>
     </div>
 
@@ -98,7 +99,7 @@
             <!-- fi de inici del formulari -->
 
             <!--  inputs -->
-            <!-- <div class="borde">
+             <div class="borde">
 
     <h2>Introducció de text bàsica: &lt;input&gt;</h2>
     <br>
@@ -148,7 +149,7 @@
 &lt;/div&gt;
         </code></pre>
     </details>
-            </div> -->
+            </div> 
 
             <!--  fi del inputs -->
 
@@ -197,24 +198,24 @@
                     <summary>Codi dels &lt;input&gt; amb errors accessibles</summary>
                     <button type="button" class="copy-btn">Copia codi</button>
                     <pre><code>
-                &lt;div class="camp-formulari"&gt;
-                    &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;
-                    &lt;input type="text" id="nom" name="nom" required autocomplete="given-name" aria-describedby="nom-error"&gt;
-                    &lt;span id="nom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El nom és obligatori.&lt;/span&gt;
-                &lt;/div&gt;
+&lt;div class="camp-formulari"&gt;
+    &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="nom" name="nom" required autocomplete="given-name" aria-describedby="nom-error"&gt;
+    &lt;span id="nom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El nom és obligatori.&lt;/span&gt;
+&lt;/div&gt;
 
-                &lt;div class="camp-formulari"&gt;
-                    &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;
-                    &lt;input type="text" id="cognom" name="cognom" required autocomplete="family-name" aria-describedby="cognom-error"&gt;
-                    &lt;span id="cognom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El cognom és obligatori.&lt;/span&gt;
-                &lt;/div&gt;
+&lt;div class="camp-formulari"&gt;
+    &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="cognom" name="cognom" required autocomplete="family-name" aria-describedby="cognom-error"&gt;
+    &lt;span id="cognom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El cognom és obligatori.&lt;/span&gt;
+&lt;/div&gt;
 
-                &lt;div class="camp-formulari"&gt;
-                    &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;
-                    &lt;input type="email" id="email" name="email" required aria-describedby="email-help email-error" autocomplete="email"&gt;
-                    &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;
-                    &lt;span id="email-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;Introdueix un correu vàlid.&lt;/span&gt;
-                &lt;/div&gt;
+&lt;div class="camp-formulari"&gt;
+    &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="email" id="email" name="email" required aria-describedby="email-help email-error" autocomplete="email"&gt;
+    &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;
+    &lt;span id="email-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;Introdueix un correu vàlid.&lt;/span&gt;
+&lt;/div&gt;
 
                 <!-- &lt;button type="button" type="submit" onclick="validarFormulari()"&gt;Enviar&lt;/button&gt; -->
                     &lt;script&gt;

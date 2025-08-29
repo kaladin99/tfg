@@ -27,3 +27,212 @@ codi del botó:
 
 
 <strong>&ltlegend&gt</strong>
+
+
+1. Captures i explicació detallada del funcionament de l’aplicació
+Pantalla inicial: descripció d’estructura i elements.
+Exemples d’etiquetes HTML: mostrar-ne una amb la informació d’accessibilitat, com s’ha organitzat i el perquè.
+Explicació del botó d’informació i <details>: per què aquesta elecció i com millora la usabilitat.
+Botó de copiar codi: utilitat per a desenvolupadors, com està implementat i per què és accessible.
+Codi organitzat: com has separat HTML, CSS i JS i avantatges.
+
+2. Decisions de disseny
+Tipografia: criteris d’elecció (llegibilitat, compatibilitat amb lectors de pantalla, contrast).
+Colors i contrast: justificació segons WCAG 2.1.
+Distribució i jerarquia visual: per facilitar la navegació amb i sense lector de pantalla.
+Mida dels elements interactius: adaptació per a usuaris amb discapacitat visual parcial.
+
+3. Estat de l’art i comparativa ampliada
+Comparativa amb eines existents (per exemple, WAVE, Lighthouse, axe-core) indicant punts forts i febles.
+Exemples de casos reals d’empreses que han fallat en accessibilitat i conseqüències (legals, reputacionals).
+Breu repàs d’estàndards i legislació vigent (UNE-EN 301 549, RGAA, Secció 508, etc.).
+
+4. Lectors de pantalla
+Descripció de VoiceOver, NVDA, JAWS, Orca.
+Taules de dreceres de teclat (les que ja estem passant a LaTeX).
+Exemples pràctics: com llegeixen un formulari abans i després d’aplicar millores.
+
+5. Eines d’avaluació d’accessibilitat
+Explicar més a fons WAVE, Lighthouse, axe, ANDI, Tenon.io.
+Captures d’exemple amb la teua web per mostrar el resultat de cada eina.
+Comparar resultats i destacar que la teua aplicació dona informació estructurada i immediata.
+
+6. Valor afegit de la teua aplicació
+Rapidesa: no cal interactuar amb IA → informació immediata i fiable.
+Offline: es pot consultar sense connexió.
+Constància: informació sempre igual i validada per WCAG.
+Didàctica: serveix també per a formar desenvolupadors.
+
+7. Metodologia i procés de desenvolupament
+Esquemes i esbossos inicials.
+Diagrama de flux de funcionalitats.
+Cronograma o Gantt de desenvolupament.
+Justificació de tecnologies triades.
+
+8. Resultats d’enquesta
+Metodologia: a qui s’ha fet, objectiu.
+Gràfics i taules de resultats.
+Interpretació: què diuen les dades i com encaixen amb l’objectiu del TFG.
+
+
+
+
+
+
+MILLORES PENDENTS DE L'APLICACIÓ
+
+
+-Llevar la capçalera de totes les pagines menos de la inicial
+-Llevar el nom de menú de navegació
+-Crear una nova pagina per a les ferramentes de wave i lighthouse i fer una explicació d'0aquestos 
+-Explicar que inicialment es volia amb un tooltip pero que no era gens comodo  
+
+
+
+
+
+
+\subsection{Atributs ARIA més utilitzats en formularis} 
+
+En el desenvolupament de formularis complexos, WAI-ARIA posa a disposició dels desenvolupadors una sèrie d’atributs que permeten assegurar que siguen completament accessibles per a les tecnologies d'assistència.
+
+Tot i això, cal recordar que sempre que existisca una alternativa nativa en HTML és preferible emprar-la, ja que sol estar millor suportada i és més interoperable. A continuació es descriuen els atributs ARIA més utilitzats en l’àmbit dels formularis, junt amb exemples pràctics i bones pràctiques.
+
+\subsubsection{\texttt{aria-label} i \texttt{aria-labelledby}: definició del nom accessible}
+
+Aquests atributs serveixen per proporcionar un \textit{accessible name} al control, és a dir, el text que el lector de pantalla anunciarà per identificar-lo.
+
+L’atribut \texttt{aria-labelledby} s’utilitza quan ja existeix un text visible amb un identificador (\texttt{id}) que pot actuar com a nom del control. D’aquesta manera, s’evita duplicar contingut i es garanteix coherència entre el que veu un usuari vident i el que escolta una persona usuària de lector de pantalla. 
+
+Per contra, \texttt{aria-label} resulta útil quan no hi ha un text visible que es puga vincular, com ara en botons que només contenen una icona.  
+
+Les directrius oficials del W3C recomanen prioritzar \texttt{aria-labelledby} per damunt d’\texttt{aria-label}, ja que reutilitza text existent i manté la consistència semàntica \cite{w3cAPG_NamesDesc}.  
+
+\paragraph{Exemple}
+\begin{verbatim}
+<h2 id="form-title">Formulari d’exemple</h2>
+<form aria-labelledby="form-title">
+  <label for="email">Correu electrònic</label>
+  <input id="email" type="email">
+</form>
+\end{verbatim}
+
+En aquest cas quan el focus entre dins del <form aria-labelledby="form-title"> <form aria-labelledby="form-title"> per tant el lector de pantalla anunciarà "Formulari d’exemple” com es veu en la figura \ref{fig:ariadescribeby-formulari-dexemple}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{TFG/img/ariadescribeby-formulari-dexemple.png}
+        \caption{ariadescribeby-formulari-dexemple}
+        \label{fig:ariadescribeby-formulari-dexemple}
+    \end{figure}
+
+
+\subsubsection{\texttt{aria-describedby}: descripcions addicionals}
+
+Aquest atribut permet enriquir un camp amb informació contextual addicional. El lector de pantalla llig primer el nom accessible i, a continuació, el contingut de l’element referenciat per \texttt{aria-describedby}. És especialment útil per oferir instruccions, requisits o missatges d’error.
+
+\begin{verbatim}
+<label for="pwd">Contrasenya</label>
+<input id="pwd" type="password" aria-describedby="pwd-help">
+<small id="pwd-help">Mínim 8 caràcters, amb número i símbol.</small>
+\end{verbatim}
+
+\subsubsection{\texttt{aria-required} vs \texttt{required}}
+
+Per a camps obligatoris, la millor opció continua sent l’atribut natiu \texttt{required}, ja que el navegador pot validar-lo automàticament i els lectors de pantalla l’anuncien de forma fiable. Tanmateix, en components personalitzats que emulen camps natius, pot ser necessari emprar \texttt{aria-required="true"} per indicar que el camp és obligatori.
+
+\subsubsection{\texttt{aria-invalid}: gestió d’errors}
+
+Quan un camp de formulari no supera la validació, es pot marcar amb l’atribut \texttt{aria-invalid}. Aquest atribut fa que el lector de pantalla anuncie que el camp és “invàlid”, millorant l’experiència de l’usuari i reduint la confusió. 
+
+\begin{verbatim}
+<input id="email" type="email" aria-describedby="email-error">
+<span id="email-error" aria-live="polite" hidden>
+  Introdueix un correu vàlid.
+</span>
+\end{verbatim}
+En aquest cas, un script podria afegir o eliminar l’atribut \texttt{aria-invalid} segons la validesa del camp i mostrar o amagar el missatge d’error de manera dinàmica.
+
+\subsubsection{Missatges dinàmics: \texttt{aria-live}, \texttt{role="status"} i \texttt{role="alert"}}
+
+Els formularis moderns sovint necessiten actualitzar informació sense recarregar la pàgina, com missatges d’estat o validacions instantànies. Per a aquests casos, es poden emprar regions dinàmiques amb atributs com \texttt{aria-live}.  
+\begin{itemize}
+  \item \texttt{aria-live="polite"} anuncia canvis no urgents.
+  \item \texttt{role="status"} és una alternativa equivalent a “polite” per a actualitzacions informatives.
+  \item \texttt{role="alert"} o \texttt{aria-live="assertive"} s’utilitzen per a errors crítics o missatges urgents, sempre amb precaució.
+\end{itemize}
+
+\subsubsection{\texttt{aria-errormessage}: associació explícita d’errors}
+
+Aquest atribut relaciona un camp directament amb el seu missatge d’error. Perquè siga anunciat, el camp ha d’estar marcat prèviament amb \texttt{aria-invalid="true"}. A diferència de \texttt{aria-describedby}, ací el lector de pantalla entén clarament que el text associat correspon a un error.  
+
+\subsubsection{Estat i revelació progressiva: \texttt{aria-expanded} i \texttt{aria-controls}}
+
+En situacions on un botó desplega o amaga contingut, com ajuda contextual o seccions opcionals, s’empren aquests atributs per indicar l’estat i el control relacionat. D’aquesta manera, les tecnologies assistives poden anunciar si la secció està expandida o col·lapsada.  
+
+\subsubsection{Controls d’elecció: \texttt{aria-checked} i \texttt{aria-pressed}}
+
+Aquests atributs informen sobre l’estat d’un element que pot estar actiu o inactiu. Tot i això, en elements natius com \texttt{checkbox} o \texttt{radio} és preferible deixar que siga l’HTML qui gestione l’estat. \texttt{aria-pressed}, en canvi, és útil en botons personalitzats que actuen com a interruptors.
+
+\subsubsection{Autocompleció avançada: \texttt{aria-autocomplete} i \texttt{aria-activedescendant}}
+
+En patrons més complexos, com ara els \textit{combobox}, aquests atributs indiquen quina opció està activa i com s’ha de gestionar l’autocompleció. Tot i això, sempre que siga possible és més recomanable utilitzar elements natius com \texttt{<datalist>} o components seguint els patrons oficials d’ARIA \cite{w3cAPG_ReadMe}.
+
+
+
+\subsection{WAI-ARIA per a formularis complexos}
+
+
+
+Els formularis son un dels elements més crítics en l’accessibilitat web, ja que representen la principal via d’interacció amb l’usuari: permeten introduir dades, autenticar-se, registrar-se o completar processos de compra i gestió. 
+
+Tot i que l’HTML proporciona etiquetes i atributs natius suficients per a formularis senzills (\texttt{<label>}, \texttt{<input>}, \texttt{<button>}, \texttt{required}, etc.), quan el formulari es fa més complex i incorpora elements dinàmics o personalitzats, resulta necessari complementar amb WAI-ARIA per a garantir que els lectors de pantalla i altres tecnologies d’assistència puguen transmetre tota la informació de manera adequada \cite{w3cARIA_about}.  
+
+Un dels primers aspectes a considerar és l’ús correcte dels \textit{accessible names}. Quan un camp no té una etiqueta vinculada amb \texttt{<label for="..." >}, els usuaris de lectors de pantalla poden no entendre la seua funció. En aquests casos, WAI-ARIA ofereix propietats com \texttt{aria-label} o \texttt{aria-labelledby} per a proporcionar una descripció clara i inequívoca. Per exemple:  
+
+\begin{verbatim}
+<input type="text" id="codi" aria-label="Introdueix el codi de verificació">
+\end{verbatim}
+
+En aquest cas, fins i tot sense un \texttt{<label>} visible, el lector de pantalla llegirà el text definit a \texttt{aria-label}. Això és especialment útil en interfícies on es vol mantenir un disseny minimalista però sense perdre accessibilitat.  
+
+Un altre ús freqüent de WAI-ARIA en formularis complexos és la gestió d’errors i instruccions contextuals. L’atribut \texttt{aria-describedby} permet associar un camp amb un text addicional que descriu millor com omplir-lo o què ocorre quan hi ha un error. Per exemple:  
+
+\begin{verbatim}
+<label for="email">Correu electrònic:</label>
+<input type="email" id="email" aria-describedby="ajuda-email" required>
+<small id="ajuda-email">Introdueix un correu vàlid, 
+per exemple usuari@domini.com</small>
+\end{verbatim}
+
+En aquest cas, quan l’usuari navega pel camp, el lector de pantalla primer anunciarà el nom del camp i tot seguit la descripció associada amb \texttt{aria-describedby}. D’aquesta manera, es redueix la possibilitat d’error i es proporciona una experiència més completa.  
+
+En formularis dinàmics, on apareixen o desapareixen camps en funció de les respostes de l’usuari, els atributs com \texttt{aria-expanded} i \texttt{aria-hidden} són essencials. Per exemple, en un formulari d’enquesta on, en marcar “Sí” a una pregunta, apareix un nou bloc de preguntes, és necessari indicar a la tecnologia assistiva que aquest contingut s’ha expandit:  
+
+\begin{verbatim}
+<button aria-expanded="false" aria-controls="seccio-extra">
+  Vols afegir informació addicional?
+</button>
+<div id="seccio-extra" hidden>
+  <label for="comentari">Comentari:</label>
+  <textarea id="comentari"></textarea>
+</div>
+\end{verbatim}
+
+Quan l’usuari activa el botó, l’atribut \texttt{aria-expanded} canvia a \texttt{true} i el contingut de la secció passa a estar disponible per al lector de pantalla.  
+
+Un altre cas important és la validació en temps real. Atributs com \texttt{aria-invalid="true"} permeten marcar un camp com a incorrecte quan el valor no compleix els criteris requerits. Això és fonamental per a guiar l’usuari i evitar confusions:  
+
+\begin{verbatim}
+<input type="password" aria-invalid="true" aria-describedby="error-pass">
+<small id="error-pass">La contrasenya ha de tindre almenys 8 caràcters.</small>
+\end{verbatim}
+
+ Per a formularis molt extensos, és recomanable utilitzar \texttt{role="form"} i dividir-lo en seccions amb landmarks ARIA (\texttt{role="region"} o \texttt{aria-labelledby}) per a facilitar la navegació per teclat i el salt entre blocs. 
+
+
+
+
+
+
+
+

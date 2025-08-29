@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guia interactiva d’elements HTML accessibles AccessibilidadAccesible.com</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- <div class="element header">
+        <header>
+            <h1>Guia interactiva d’elements HTML accessibles</h1>
+            <div class="tooltip">
+                &lt;header&gt;
+                &lt;h1&gt; Titol de la pàgina &lt;h1&gt;
+                &lt;/header&gt;
+                <button class="copy-btn">Copia codi</button>
+            </div>
+        </header>
+
+    </div> -->
+
+    <div class="element sidebar">
+        <!-- <h2>Menú de navegació</h2> -->
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="estructura.html">Estructures bàsiques</a></li>
+                <li><a href="formularis.html">Formularis</a></li>
+                <li><a href="taules.html">Taules</a></li>
+                <li><a href="navegacio.html">Navegació</a></li>
+                <li><a href="multimedia.html">Multimèdia</a></li>
+                <li><a href="interactius.html">Elements interactius</a></li>
+                <li><a href="aria.html">WAI-ARIA</a></li>
+                <li><a href="validaco.html" style="background-color: #a9bef7;">Ferramentes de validació</a></li>
+            </ul>
+        </nav>
+        <!-- <div class="tooltip">
+            &lt;h2&gt;Menú de navegació&lt;/h2&gt;<br>
+            &lt;nav aria-label="Menú principal"&gt;<br>
+            &lt;ul&gt;<br>
+            &lt;li&gt;&lt;a href="#inici"&gt;Inici&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="#contacte"&gt;Contacte&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;/ul&gt;<br>
+            &lt;/nav&gt;<br>
+            <button class="copy-btn">Copia codi</button>
+        </div> -->
+
+    </div>
+
+    <section class="presentacio element">
+        <p>
+        Aquesta secció et permet conéixer i utilitzar ferramentes de validació per comprovar si la teua pàgina web és accessible. 
+        Les eines WAVE i Lighthouse analitzen el codi i la interfície, detecten possibles errors i ofereixen recomanacions per millorar-ne l’accessibilitat.
+        </p>
+        
+
+    </section>
+
+    <section class="explicacio element">
+        <h2>WAVE</h2>
+        <p>WAVE és una eina gratuïta de WebAIM que permet analitzar qualsevol pàgina web i detectar problemes
+            d’accessibilitat.
+            Funciona com una extensió de navegador (Chrome i Firefox) o bé mitjançant el seu servei web. 
+        </p>
+        <p>
+            Quan s’executa, WAVE mostra la pàgina analitzada amb una sèrie d’icones i marques visuals que indiquen:
+        </p>
+
+            <ul>
+                <li><strong>Errors:</strong>  problemes greus d’accessibilitat (per exemple, imatges sense text alternatiu o encapçalaments mal estructurats).</li>
+                <li> <strong>Avisos:</strong>  possibles millores recomanades, que no sempre són errors.</li>
+                <li><strong>Característiques:</strong> elements correctes que contribueixen a l’accessibilitat (per exemple, presència d’etiquetes de formulari associades).</li>
+            </ul>
+            <p>
+                L’avantatge de WAVE és que mostra els errors directament sobre la mateixa pàgina, facilitant-ne la identificació i correcció. És ideal per a validacions ràpides i concretes.
+            </p>
+            <a href="https://wave.webaim.org/extension/">Enllaç a la l'extensió de WAVE</a>
+    </section>
+
+    <section class="Explicacio element">
+        <h3>Lighthouse</h3>
+        <p>
+            Lighthouse és una eina de Google integrada en el navegador Chrome DevTools,
+            que permet realitzar una anàlisi completa d’una pàgina web. Genera un
+            informe detallat que avalua quatre dimensions principals:
+        <ul>
+            <li>Performance</li>
+            <li>Accessibility</li>
+            <li>Best practices</li>
+            <li>SEO</li>
+        </ul>
+        </p>
+        <p>Per a l’accessibilitat, Lighthouse comprova automàticament aspectes com: contrast de colors, ús correcte
+            d’etiquetes,
+            estructura d’encapçalaments, presència de noms accessibles en botons i enllaços, entre altres criteris.
+            L’informe ofereix una puntuació de 0 a 100, acompanyada d’una llista d’errors i suggeriments per millorar la
+            pàgina.
+            És especialment útil per a una avaluació global i per a comprovar l’eficiència del lloc en diferents
+            dimensions.
+        </p>
+        <a href="https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=es">Enllaç a l'extensió de Lighthouse</a>
+
+    </section>
+    <section class="Explicacio element">
+        <h4>Com s'utilitza a l'aplicació</h4>
+        <p>
+            Després de construir una pàgina seguint els exemples i bones pràctiques de l’aplicació,
+            es recomana utilitzar ambdues aplicacions esmentades abans per tal d'obtindre un millor resultat
+        <ol>
+            <li>Obrir la pàgina web que ha creat.</li>
+            <li>Executar WAVE per identificar i corregir errors concrets d’accessibilitat.</li>
+            <li>Obrir Lighthouse (des de Chrome → DevTools → Lighthouse) i generar un informe complet per obtenir una
+                puntuació i recomanacions generals.</li>
+        </ol>
+
+        </p>
+        <p>D'aquesta manera tenuim el millor de cada aplicació, els errors concrets i visuals de WAVE i la visió global
+            i quantitativa de l'accessibilitat i qualitat númerica de Lighthouse</p>
+    </section>
+
+    <div class="element footer">
+        <h2> Footer</h2>
+
+        <footer>
+            <p>© 2025 Nom de la teua empresa</p>
+        </footer>
+        <div class="tooltip">
+            &lt;header&gt;
+            &lt;h1&gt;Benvingut&lt;/h1&gt;
+            &lt;/header&gt;
+            &lt;footer&gt;
+            &lt;p&gt;© 2025 Nom de la teua empresa&lt;/p&gt;
+            &lt;/footer&gt;
+            <button class="copy-btn">Copia codi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
