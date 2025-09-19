@@ -37,7 +37,8 @@ h1 {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 .element {
-  margin: 1% 15%;
+  margin: 1% 10%;
+  margin-left: 15%;
   position: relative;
   padding: 10px;
   background: #fff;
@@ -295,3 +296,13 @@ textarea {
 }
 
 
+.buttonEnviar {
+  padding: 0.5rem 1rem;
+  /* font-size: 1rem; */
+  margin-right: 0.5rem;
+  background-color: #4d9cf0;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}

@@ -26,7 +26,7 @@
                     <li><a href="estructura.html">Estructures bàsiques</a></li>
                     <li><a href="formularis.html" style="background-color: #a9bef7;">Formularis i interacció</a></li>
                     <li><a href="taules.html">Taules</a></li>
-                    <li><a href="navegacio.html">Navegació</a></li>
+                    <!-- <li><a href="navegacio.html">Navegació</a></li> -->
                     <li><a href="multimedia.html">Multimèdia</a></li>
                     <li><a href="interactius.html">Elements interactius</a></li>
                     <li><a href="aria.html">WAI-ARIA</a></li>
@@ -154,95 +154,7 @@
             <!--  fi del inputs -->
 
             <!-- inputs amb validació en viu -->
-            <div class="borde">
-
-                <h2>Introducció de text bàsica: &lt;input&gt; amb errors accessibles</h2>
-                <br>
-                <div class="element-header">
-
-                    <div class="camp-formulari">
-                        <label for="nom">Nom:</label><br>
-                        <input type="text" id="nom" name="nom" required autocomplete="given-name"
-                            aria-describedby="nom-error">
-                        <span id="nom-error" class="error" aria-live="polite" style="display:none; color:red;">El nom és
-                            obligatori.</span>
-                    </div>
-
-                    <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
-                        aria-haspopup="dialog" aria-controls="info-modal"
-                        data-info="Cada <strong>&ltinput&gt</strong> està vinculat a la seua <strong>&ltlabel&gt</strong> amb <strong>for</strong> i <strong>id</strong> coincidents. Els atributs <strong>required</strong> i <strong>autocomplete</strong> milloren l’experiència amb lectors de pantalla i navegadors. Quan hi ha errors, <strong>aria-invalid</strong> indica l’estat invàlid i <strong>aria-live</strong> amb valor <em>polite</em> permet anunciar el missatge d’error automàticament. Això evita dependència exclusiva de missatges visuals.">
-                        ℹ️
-                    </button>
-                </div>
-
-                <div class="camp-formulari">
-                    <label for="cognom">Cognom:</label><br>
-                    <input type="text" id="cognom" name="cognom" required autocomplete="family-name"
-                        aria-describedby="cognom-error">
-                    <span id="cognom-error" class="error" aria-live="polite" style="display:none; color:red;">El cognom
-                        és obligatori.</span>
-                </div>
-
-                <div class="camp-formulari">
-                    <label for="email">Correu electrònic:</label><br>
-                    <input type="email" id="email" name="email" required aria-describedby="email-help email-error"
-                        autocomplete="email">
-                    <br><small id="email-help">No compartirem el teu correu amb ningú.</small>
-                    <span id="email-error" class="error" aria-live="polite" style="display:none; color:red;">Introdueix
-                        un correu vàlid.</span>
-                </div>
-
-                <!-- <button type="button" type="submit" onclick="validarFormulari()">Enviar</button> -->
-
-                <details class="codi">
-                    <summary>Codi dels &lt;input&gt; amb errors accessibles</summary>
-                    <button type="button" class="copy-btn">Copia codi</button>
-                    <pre><code>
-&lt;div class="camp-formulari"&gt;
-    &lt;label for="nom"&gt;Nom:&lt;/label&gt;&lt;br&gt;
-    &lt;input type="text" id="nom" name="nom" required autocomplete="given-name" aria-describedby="nom-error"&gt;
-    &lt;span id="nom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El nom és obligatori.&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div class="camp-formulari"&gt;
-    &lt;label for="cognom"&gt;Cognom:&lt;/label&gt;&lt;br&gt;
-    &lt;input type="text" id="cognom" name="cognom" required autocomplete="family-name" aria-describedby="cognom-error"&gt;
-    &lt;span id="cognom-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;El cognom és obligatori.&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div class="camp-formulari"&gt;
-    &lt;label for="email"&gt;Correu electrònic:&lt;/label&gt;&lt;br&gt;
-    &lt;input type="email" id="email" name="email" required aria-describedby="email-help email-error" autocomplete="email"&gt;
-    &lt;br&gt;&lt;small id="email-help"&gt;No compartirem el teu correu amb ningú.&lt;/small&gt;
-    &lt;span id="email-error" class="error" aria-live="polite" style="display:none; color:red;"&gt;Introdueix un correu vàlid.&lt;/span&gt;
-&lt;/div&gt;
-
-                <!-- &lt;button type="button" type="submit" onclick="validarFormulari()"&gt;Enviar&lt;/button&gt; -->
-                    &lt;script&gt;
-                            function validarFormulari() {
-                            const camps = [
-                            { id: 'nom', missatge: 'nom-error' },
-                            { id: 'cognom', missatge: 'cognom-error' },
-                            { id: 'email', missatge: 'email-error' }
-                            ];
-
-                            camps.forEach(camp => {
-                            const input = document.getElementById(camp.id);
-                            const error = document.getElementById(camp.missatge);
-
-                            if (!input.checkValidity()) {
-                            error.style.display = 'inline';
-                            input.setAttribute('aria-invalid', 'true');
-                            } else {
-                            error.style.display = 'none';
-                            input.removeAttribute('aria-invalid');
-                            }
-                            });
-                            }
-                            &lt;/script&gt;
-        </code></pre>
-                </details>
-            </div>
+           
 
 
             <!-- fi dels inputs amb validació en viu  -->
@@ -252,22 +164,38 @@
 
     <!-- Input type="date" -->
     <div class="camp-formulari">
+        <div class="borde">
         <div class="element-header">
             <label for="data-naixement">Data de naixement:</label>
+            
             <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
                 aria-haspopup="dialog" aria-controls="info-modal"
                 data-info="L'etiqueta <strong>&ltlabel&gt</strong> vinculada al <strong>&ltinput type='date'&gt</strong> permet que el lector de pantalla anuncie clarament la funció del camp 
                 <br>Es recomana indicar el format esperat i, si cal, limitar el rang amb <strong>min</strong> i <strong>max</strong> per ajudar la navegació">
                 ℹ️
             </button>
+            
         </div>
         <input type="date" id="data-naixement" name="data-naixement" min="1900-01-01" max="2025-12-31">
+        <details class="codi">
+        <summary>Codi de la data </summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;input type="date" id="data-naixement" name="data-naixement" min="1900-01-01" max="2025-12-31"&gt;
+
+        </code></pre>
+    </details>
+        </div>
+
+        
     </div>
 
     <!-- Input type="time" -->
     <div class="camp-formulari">
+<div class="borde">
         <div class="element-header">
             <label for="hora-cita">Hora de la cita:</label>
+           
             <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
                 aria-haspopup="dialog" aria-controls="info-modal"
                 data-info="L'etiqueta <strong>&ltlabel&gt</strong> vinculada al <strong>&ltinput type='time'&gt</strong> ajuda als lectors de pantalla a identificar que es tracta d'una selecció d'hora 
@@ -275,11 +203,23 @@
                 ℹ️
             </button>
         </div>
-        <input type="time" id="hora-cita" name="hora-cita" step="900">
+         <input type="time" id="hora-cita" name="hora-cita" step="900">
+        <details class="codi">
+        <summary>Codi de l'hora </summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;input type="time" id="hora-cita" name="hora-cita" step="900"&gt;
+
+        </code></pre>
+    </details>
+        </div>
+
+        
     </div>
 
     <!-- Input type="number" -->
     <div class="camp-formulari">
+        <div class="borde">
         <div class="element-header">
             <label for="quantitat">Quantitat:</label>
             <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
@@ -290,10 +230,21 @@
             </button>
         </div>
         <input type="number" id="quantitat" name="quantitat" min="1" max="10" step="1">
+        <details class="codi">
+        <summary>Codi del selector numeric </summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;input type="time" id="hora-cita" name="hora-cita" step="900"&gt;
+
+        </code></pre>
+    </details>
+        </div>
+        
     </div>
 
     <!-- Input type="color" -->
     <div class="camp-formulari">
+        <div class="borde">
         <div class="element-header">
             <label for="color-preferit">Color preferit:</label>
             <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
@@ -304,10 +255,20 @@
             </button>
         </div>
         <input type="color" id="color-preferit" name="color-preferit" value="#0000ff">
+        <details class="codi">
+        <summary>Codi del selector de clor </summary>
+        <button type="button" class="copy-btn">Copia codi</button>
+        <pre><code>
+&lt;input type="color" id="color-preferit" name="color-preferit" value="#0000ff"&gt;
+
+        </code></pre>
+    </details>
+        </div>
     </div>
 
     <!-- Input type="file" -->
     <div class="camp-formulari">
+        <div class="borde">
         <div class="element-header">
             <label for="fitxer">Puja un fitxer:</label>
             <button type="button" class="info-btn" aria-label="Informació d’accessibilitat"
@@ -319,19 +280,18 @@
             </button>
         </div>
         <input type="file" id="fitxer" name="fitxer" accept=".pdf,.docx,image/*">
-    </div>
-
-    <details class="codi">
-        <summary>Codi dels inputs avançats</summary>
+         <details class="codi">
+        <summary>Codi del selector de fitxers</summary>
         <button type="button" class="copy-btn">Copia codi</button>
         <pre><code>
-&lt;input type="date" id="data-naixement" name="data-naixement" min="1900-01-01" max="2025-12-31"&gt;
-&lt;input type="time" id="hora-cita" name="hora-cita" step="900"&gt;
-&lt;input type="number" id="quantitat" name="quantitat" min="1" max="10" step="1"&gt;
-&lt;input type="color" id="color-preferit" name="color-preferit" value="#0000ff"&gt;
 &lt;input type="file" id="fitxer" name="fitxer" accept=".pdf,.docx,image/*"&gt;
         </code></pre>
     </details>
+        </div>
+        
+    </div>
+
+   
 </div>
 
               <!-- fi del inputs avançats -->
@@ -346,7 +306,8 @@
                 aria-controls="info-modal"
                 data-info="Aquest camp utilitza <strong>&ltaria-live&gt</strong> i <strong>role='status'</strong> per anunciar canvis de validació en temps real sense moure el focus 
                 <br>Quan el contingut no és vàlid s'afegeix <strong>aria-invalid='true'</strong> per indicar-ho als lectors de pantalla 
-                <br>Els missatges d’ajuda i error estan vinculats amb <strong>aria-describedby</strong> i <strong>aria-errormessage</strong> perquè siguen llegits junt amb el camp">
+                <br>Els missatges d’ajuda i error estan vinculats amb <strong>aria-describedby</strong> i <strong>aria-errormessage</strong> perquè siguen llegits junt amb el camp
+                El valor polite vol dir que el lector de pantalla anunciarà el canvi quan haja acabat de llegir el que està llegint actualment, sense interrompre l’usuari.">
                 ℹ️
             </button>
         </div>
@@ -393,7 +354,8 @@
         <button type="button" class="copy-btn">Copia codi</button>
         <pre><code>
 &lt;label for="pwd"&gt;Contrasenya:&lt;/label&gt;
-&lt;input type="password" id="pwd" name="pwd" aria-describedby="pwd-help pwd-msg" minlength="8" required&gt;
+&lt;input type="password" id="pwd" name="pwd"
+ aria-describedby="pwd-help pwd-msg" minlength="8" required&gt;
 &lt;small id="pwd-help"&gt;Mínim 8 caràcters amb almenys una xifra&lt;/small&gt;
 &lt;p id="pwd-msg" role="status" aria-live="polite"&gt;&lt;/p&gt;
 
@@ -405,9 +367,12 @@
   function update() {
     const v = pwd.value || '';
     let text = ''; let invalid = false;
-    if (v.length && v.length &lt; 8) { text = 'La contrasenya és massa curta'; invalid = true; }
-    else if (v.length &gt;= 8 && !reNum.test(v)) { text = 'Afig almenys una xifra'; invalid = true; }
-    else if (v.length &gt;= 8 && reNum.test(v)) { text = 'Contrasenya amb requisits mínims complits'; }
+    if (v.length && v.length &lt; 8) 
+        { text = 'La contrasenya és massa curta'; invalid = true; }
+    else if (v.length &gt;= 8 && !reNum.test(v))
+         { text = 'Afig almenys una xifra'; invalid = true; }
+    else if (v.length &gt;= 8 && reNum.test(v)) 
+        { text = 'Contrasenya amb requisits mínims complits'; }
     msg.textContent = text;
     if (invalid) pwd.setAttribute('aria-invalid','true');
     else pwd.removeAttribute('aria-invalid');

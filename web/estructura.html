@@ -22,7 +22,7 @@
                 <li><a href="estructura.html"style="background-color: #a9bef7;">Estructures bàsiques</a></li>
                 <li><a href="formularis.html">Formularis</a></li>
                 <li><a href="taules.html">Taules</a></li>
-                <li><a href="navegacio.html">Navegació</a></li>
+                <!-- <li><a href="navegacio.html">Navegació</a></li> -->
                 <li><a href="multimedia.html">Multimèdia</a></li>
                 <li><a href="interactius.html">Elements interactius</a></li>
                 <li><a href="aria.html">WAI-ARIA</a></li>
@@ -71,7 +71,7 @@
     <!-- BOTÓ AMB TEXT -->
     <div class="camp-formulari">
         <div class="element-header">
-            <button type="button">Enviar formulari</button>
+            <button type="button" class="buttonEnviar">Enviar formulari</button>
             <button type="button" class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
                 aria-controls="info-modal"
                 data-info="Els botons amb text dins de &ltbutton&gt tenen un nom accessible automàticament, per tant els lectors de pantalla el reconeixen sense atributs addicionals 
@@ -88,8 +88,7 @@
 &lt;!-- Botó amb text --&gt;
 &lt;button type="button"&gt;Enviar formulari&lt;/button&gt;
 
-&lt;!-- Botó només amb icona --&gt;
-&lt;button type="button" aria-label="Afegir al carret"&gt;🛒&lt;/button&gt;
+
         </code></pre>
     </details>
  </div>
@@ -97,8 +96,8 @@
      <div class="borde">
     <div class="camp-formulari">
         <div class="element-header">
-            <button type="button" aria-label="Afegir al carret">
-                🛒
+            <button type="button" aria-label="Afegir al carret" class="buttonEnviar">🛒
+                
             </button>
             <button type="button" class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"
                 aria-controls="info-modal"
@@ -131,9 +130,9 @@
         <h3>Llista desordenada: &lt;ul&gt;</ul></h3>
         <div class="element-header">
             <ul>
-                <li>Element de llista 1</li>
-                <li>Element de llista 2</li>
-                <li>Element de llista 3</li>
+                <li>Primer element de la llista</li>
+                <li>Segon element de la llista</li>
+                <li>Tercer element de la llista</li>
             </ul>
 
             <button class="info-btn" aria-label="Informació d’accessibilitat" aria-haspopup="dialog"

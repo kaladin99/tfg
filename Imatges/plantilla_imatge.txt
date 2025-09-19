@@ -236,3 +236,8 @@ Un altre cas important és la validació en temps real. Atributs com \texttt{ari
 
 
 
+
+Afegit al tfg
+
+Posar quins ods compleix i quina relació te el tfg amb les assignatures de el grau
+
